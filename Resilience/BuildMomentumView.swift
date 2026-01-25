@@ -6,335 +6,346 @@ struct BuildMomentumView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \TodoItem.order) private var todos: [TodoItem]
     @Query private var cartItems: [CartItem]
-    @StateObject private var store = BluStore.shared 
+    @StateObject private var store = BluStore.shared
     
-    // Progress Card States
-    @State private var progressMode: Int = 0 // 0: Exercise, 1: Diet, 2: Body
-    @State private var animateTitle = false
-    
-    // Quick Add Todo State
+    // UI States
     @State private var quickTodoText: String = ""
-    @FocusState private var isAddFocused: Bool
     @State private var showFocusMode = false
     
     var body: some View {
         NavigationView {
-            GeometryReader { geo in
-                ZStack(alignment: .top) {
-                    // Background
-                    Color.black.edgesIgnoringSafeArea(.all)
-                    
-                    VStack(spacing: 0) {
-                        // App Bar
-                        ResilienceAppBar(showBackButton: false)
-                        
-                        ScrollView(showsIndicators: false) {
-                            VStack(spacing: 24) {
-                                // Title Section
-                                VStack(spacing: 4) {
-                                    Text("Build Your Momentum")
-                                        .font(.system(size: 28, weight: .black, design: .rounded))
-                                        .foregroundStyle(
-                                            LinearGradient(
-                                                colors: [.blue, .purple],
-                                                startPoint: .leading,
-                                                endPoint: .trailing
-                                            )
+            ZStack(alignment: .bottom) {
+                // Background
+                Color.black.edgesIgnoringSafeArea(.all)
+                
+                // Main Content
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 24) {
+                        // Header
+                        VStack(spacing: 8) {
+                            Text("Resilience")
+                                .font(.system(size: 20, weight: .heavy, design: .rounded))
+                                .foregroundColor(.white.opacity(0.8))
+                            
+                            VStack(spacing: 4) {
+                                Text("Build Your Momentum")
+                                    .font(.system(size: 28, weight: .black, design: .rounded))
+                                    .foregroundStyle(
+                                        LinearGradient(
+                                            colors: [.blue.opacity(0.8), .purple],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
                                         )
-                                        .shadow(color: .purple.opacity(0.3), radius: 10, x: 0, y: 5)
-                                    
-                                    Capsule()
-                                        .fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing))
-                                        .frame(width: 100, height: 4)
-                                }
-                                .padding(.top, 10)
+                                    )
+                                    .shadow(color: .purple.opacity(0.3), radius: 10, x: 0, y: 5)
                                 
-                                // Cards Stack (Spreading nicely)
-                                VStack(spacing: 20) {
-                                    
-                                    // 1. Progress Card (Full Width)
-                                    VStack(spacing: 12) {
-                                        NavigationLink(destination: ProgressTrackingView()) {
-                                            HStack {
-                                                Image(systemName: "chart.xyaxis.line")
-                                                    .foregroundColor(.cyan)
-                                                Text("Progress Tracking")
-                                                    .font(.headline)
-                                                    .foregroundColor(.white)
-                                                Spacer()
-                                                Image(systemName: "chevron.right")
-                                                    .foregroundColor(.gray)
-                                            }
+                                Capsule()
+                                    .fill(LinearGradient(colors: [.blue, .purple], startPoint: .leading, endPoint: .trailing))
+                                    .frame(width: 140, height: 4)
+                            }
+                        }
+                        .padding(.top, 10)
+                        
+                        // Main Grid Layout
+                        VStack(spacing: 16) {
+                            
+                            // Row 1: Progress Grid & To Do List
+                            HStack(alignment: .top, spacing: 16) {
+                                
+                                // Left Col: Progress Grid (2x2)
+                                VStack(spacing: 12) {
+                                    HStack {
+                                        Text("Progress")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                        Spacer()
+                                        // Icons for tabs (placeholder visual)
+                                        HStack(spacing: 4) {
+                                            Image(systemName: "chart.bar.fill").font(.caption2).foregroundColor(.blue)
+                                            Image(systemName: "dumbbell.fill").font(.caption2).foregroundColor(.gray)
+                                            Image(systemName: "figure.run").font(.caption2).foregroundColor(.gray)
                                         }
-                                        
-                                        // Preview Content
-                                        HStack(spacing: 20) {
-                                            VStack(alignment: .leading) {
-                                                Text("Weight").font(.caption).foregroundColor(.gray)
+                                        .padding(4)
+                                        .background(Color.white.opacity(0.1))
+                                        .cornerRadius(8)
+                                    }
+                                    
+                                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                                        ProgressSquare(icon: "clock.arrow.circlepath", value: "3h 12m", label: "Active", color: .indigo)
+                                        ProgressSquare(icon: "shoe.fill", value: "109", label: "Steps", color: .green)
+                                        ProgressSquare(icon: "flame.fill", value: "2", label: "Streak", color: .orange)
+                                        ProgressSquare(icon: "clock", value: "0m", label: "Focus", color: .purple)
+                                    }
+                                }
+                                .padding()
+                                .background(Color(UIColor.systemGray6).opacity(0.15))
+                                .cornerRadius(24)
+                                .overlay(RoundedRectangle(cornerRadius: 24).stroke(Color.blue.opacity(0.3), lineWidth: 1))
+                                
+                                // Right Col: To Do List
+                                VStack(spacing: 0) {
+                                    NavigationLink(destination: TodoListView()) {
+                                        HStack {
+                                            Image(systemName: "list.bullet.circle")
+                                                .foregroundColor(.cyan)
+                                            Text("To Do List")
+                                                .font(.headline)
+                                                .foregroundColor(.white)
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .font(.caption)
+                                                .foregroundColor(.gray)
+                                        }
+                                        .padding([.horizontal, .top])
+                                        .padding(.bottom, 8)
+                                    }
+                                    
+                                    if todos.isEmpty {
+                                        VStack {
+                                            Spacer()
+                                            Text("No active tasks")
+                                                .font(.caption)
+                                                .foregroundColor(.gray)
+                                            Button(action: { /* Focus field */ }) {
                                                 HStack {
-                                                    Text("183.2").font(.title2).fontWeight(.bold).foregroundColor(.white)
-                                                    Text("lbs").font(.caption).foregroundColor(.gray)
+                                                    Image(systemName: "plus")
+                                                    Text("Add a task...")
+                                                }
+                                                .font(.caption)
+                                                .foregroundColor(.white.opacity(0.5))
+                                            }
+                                            .padding(.top, 4)
+                                            Spacer()
+                                        }
+                                        .frame(height: 120)
+                                    } else {
+                                        VStack(alignment: .leading, spacing: 12) {
+                                            ForEach(todos.prefix(4)) { todo in
+                                                HStack(alignment: .top, spacing: 8) {
+                                                    Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
+                                                        .foregroundColor(todo.isCompleted ? .green : .gray)
+                                                        .font(.caption)
+                                                    Text(todo.text)
+                                                        .font(.caption)
+                                                        .strikethrough(todo.isCompleted)
+                                                        .foregroundColor(todo.isCompleted ? .gray : .white)
+                                                        .lineLimit(1)
+                                                    Spacer()
                                                 }
                                             }
-                                            
-                                            Divider().background(Color.gray.opacity(0.3))
-                                            
-                                            VStack(alignment: .leading) {
-                                                Text("Trend").font(.caption).foregroundColor(.gray)
-                                                Text("-1.8%").font(.title2).fontWeight(.bold).foregroundColor(.green)
-                                            }
-                                            
-                                            Spacer()
-                                            
-                                            // Mini graph visual
-                                            Chart {
-                                                RuleMark(y: .value("Goal", 180)).foregroundStyle(.green).lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 5]))
-                                                LineMark(x: .value("D1", 1), y: .value("W", 185)).foregroundStyle(.cyan)
-                                                LineMark(x: .value("D2", 2), y: .value("W", 184)).foregroundStyle(.cyan)
-                                                LineMark(x: .value("D3", 3), y: .value("W", 183.2)).foregroundStyle(.cyan)
-                                            }
-                                            .frame(width: 60, height: 30)
-                                            .chartXAxis(.hidden)
-                                            .chartYAxis(.hidden)
                                         }
+                                        .padding(.horizontal)
+                                        .frame(height: 120, alignment: .top)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    // Projects / Skills Buttons
+                                    HStack(spacing: 8) {
+                                        NavigationLink(destination: ProjectsView()) {
+                                            HStack {
+                                                Image(systemName: "folder.fill")
+                                                Text("Projects")
+                                            }
+                                            .font(.caption2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .frame(maxWidth: .infinity)
+                                            .padding(.vertical, 8)
+                                            .background(Color.blue.opacity(0.8))
+                                            .cornerRadius(8)
+                                        }
+                                        
+                                        NavigationLink(destination: SkillsView()) {
+                                            HStack {
+                                                Image(systemName: "book.fill")
+                                                Text("Skills")
+                                            }
+                                            .font(.caption2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .frame(maxWidth: .infinity)
+                                            .padding(.vertical, 8)
+                                            .background(Color.purple.opacity(0.6))
+                                            .cornerRadius(8)
+                                        }
+                                    }
+                                    .padding(12)
+                                }
+                                .background(Color(UIColor.systemGray6).opacity(0.15))
+                                .cornerRadius(24)
+                                .overlay(RoundedRectangle(cornerRadius: 24).stroke(Color.blue.opacity(0.3), lineWidth: 1))
+                            }
+                            .frame(height: 280) // Fixed height to align rows
+                            
+                            // Row 2: Sleep Schedule Banner
+                            NavigationLink(destination: SleepView()) {
+                                HStack(spacing: 16) {
+                                    Image(systemName: "moon.fill")
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                        .frame(width: 50)
+                                    
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Sleep Schedule")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                        Text("sleep") // Placeholder or binding
+                                            .font(.caption)
+                                            .foregroundColor(.white.opacity(0.7))
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text("No schedule set")
+                                        .font(.caption)
+                                        .foregroundColor(.white.opacity(0.6))
+                                }
+                                .padding(20)
+                                .background(
+                                    LinearGradient(
+                                        colors: [Color(hex: "8A2BE2"), Color(hex: "4B0082")],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .cornerRadius(20)
+                            }
+                            
+                            // Row 3: Pantry & Saved
+                            HStack(spacing: 16) {
+                                NavigationLink(destination: PantryView()) {
+                                    VStack(spacing: 8) {
+                                        HStack {
+                                            Image(systemName: "cart")
+                                                .font(.title2)
+                                                .foregroundColor(.white)
+                                            Spacer()
+                                            Circle()
+                                                .fill(Color.green)
+                                                .frame(width: 20, height: 20)
+                                                .overlay(Text("0").font(.caption2).foregroundColor(.black))
+                                        }
+                                        Text("Pantry")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                        Text("1 items")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
                                     }
                                     .padding()
-                                    .background(Color(UIColor.systemGray6).opacity(0.15))
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.black)
                                     .cornerRadius(20)
-                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white.opacity(0.1), lineWidth: 1))
-                                    
-                                    // 2. To Do / Habits Card (Full width)
-                                    VStack(spacing: 0) {
-                                        NavigationLink(destination: TodoListView()) {
-                                            HStack {
-                                                Image(systemName: "list.bullet.clipboard")
-                                                    .foregroundColor(.purple)
-                                                Text("Daily Goals")
-                                                    .font(.headline)
-                                                    .foregroundColor(.white)
-                                                Spacer()
-                                                Text("\(todos.filter { !$0.isCompleted }.count) Pending")
-                                                    .font(.caption)
-                                                    .foregroundColor(.gray)
-                                            }
-                                            .padding()
-                                        }
-                                        
-                                        Divider().background(Color.white.opacity(0.1))
-                                        
-                                        // Quick List
-                                        VStack(spacing: 12) {
-                                            if todos.isEmpty {
-                                                Text("No tasks yet. Add one!").font(.caption).foregroundColor(.gray).padding()
-                                            } else {
-                                                ForEach(todos.prefix(3)) { todo in
-                                                    HStack {
-                                                        Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
-                                                            .foregroundColor(todo.isCompleted ? .green : .gray)
-                                                        Text(todo.text)
-                                                            .strikethrough(todo.isCompleted)
-                                                            .foregroundColor(todo.isCompleted ? .gray : .white)
-                                                        Spacer()
-                                                    }
-                                                }
-                                            }
-                                            
-                                            // Add Todo Input
-                                            HStack {
-                                                Image(systemName: "plus").foregroundColor(.gray)
-                                                TextField("Add quick task...", text: $quickTodoText, onCommit: addQuickTodo)
-                                                    .foregroundColor(.white)
-                                            }
-                                            .padding(10)
-                                            .background(Color.black.opacity(0.3))
-                                            .cornerRadius(10)
-                                        }
-                                        .padding()
-                                    }
-                                    .background(Color(UIColor.systemGray6).opacity(0.15))
-                                    .cornerRadius(20)
-                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white.opacity(0.1), lineWidth: 1))
-                                    
-                                    // 3. Sleep Cycle (Full Width)
-                                    NavigationLink(destination: SleepView()) {
-                                        HStack {
-                                            VStack(alignment: .leading, spacing: 4) {
-                                                HStack {
-                                                    Image(systemName: "moon.stars.fill").foregroundColor(.indigo)
-                                                    Text("Sleep Cycle").font(.headline).foregroundColor(.white)
-                                                }
-                                                Text("8h 12m scheduled").font(.caption).foregroundColor(.gray)
-                                            }
-                                            Spacer()
-                                            Image(systemName: "chevron.right").foregroundColor(.gray)
-                                        }
-                                        .padding()
-                                        .background(
-                                            LinearGradient(colors: [.indigo.opacity(0.2), .purple.opacity(0.1)], startPoint: .leading, endPoint: .trailing)
-                                        )
-                                        .cornerRadius(20)
-                                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.indigo.opacity(0.3), lineWidth: 1))
-                                    }
-                                    
-                                    // 4. Pantry & Saved (Side-by-Side but wider)
-                                    HStack(spacing: 16) {
-                                        NavigationLink(destination: PantryView()) {
-                                            HStack {
-                                                Image(systemName: "cart.fill").foregroundColor(.green)
-                                                Text("Pantry").font(.headline).foregroundColor(.white)
-                                                Spacer()
-                                            }
-                                            .padding()
-                                            .frame(maxWidth: .infinity)
-                                            .background(Color(UIColor.systemGray6).opacity(0.15))
-                                            .cornerRadius(20)
-                                        }
-                                        
-                                        NavigationLink(destination: AnyView(SavedHubView())) {
-                                            HStack {
-                                                Image(systemName: "bookmark.fill").foregroundColor(.orange)
-                                                Text("Saved").font(.headline).foregroundColor(.white)
-                                                Spacer()
-                                            }
-                                            .padding()
-                                            .frame(maxWidth: .infinity)
-                                            .background(Color(UIColor.systemGray6).opacity(0.15))
-                                            .cornerRadius(20)
-                                        }
-                                    }
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white.opacity(0.2), lineWidth: 1))
                                 }
-                                .padding(.horizontal)
                                 
-                                // Footer Action
-                                Button(action: {}) {
-                                    Text("Start Day")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.black)
-                                        .frame(maxWidth: .infinity)
-                                        .padding()
-                                        .background(Color.white)
-                                        .cornerRadius(16)
-                                        .shadow(color: .white.opacity(0.2), radius: 10, x: 0, y: 0)
+                                NavigationLink(destination: AnyView(SavedHubView())) {
+                                    VStack(spacing: 8) {
+                                        Image(systemName: "bookmark.fill")
+                                            .font(.title2)
+                                            .foregroundColor(.white)
+                                        Text("Saved")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                        Text("0 items")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.black)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white.opacity(0.2), lineWidth: 1))
                                 }
-                                .padding(.horizontal)
-                                .padding(.bottom, 20)
                             }
-                            .padding(.bottom, 50)
                         }
+                        .padding(.horizontal)
+                        
+                        // Spacer for Footer
+                        Spacer().frame(height: 100)
                     }
                 }
-                .navigationBarHidden(true)
-                .fullScreenCover(isPresented: $showFocusMode) {
-                    FocusModeView()
+                
+                // Fixed Footer
+                HStack(spacing: 16) {
+                    // Play Button Circle
+                    Button(action: { /* Play Action */ }) {
+                        Circle()
+                            .fill(
+                                LinearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                            )
+                            .frame(width: 60, height: 60)
+                            .overlay(
+                                Image(systemName: "play.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            )
+                            .shadow(color: .purple.opacity(0.5), radius: 10, x: 0, y: 0)
+                    }
+                    
+                    // Get To Work Button
+                    Button(action: { showFocusMode = true }) {
+                        HStack {
+                            Image(systemName: "chart.line.uptrend.xyaxis")
+                            Text("Get To Work")
+                                .fontWeight(.bold)
+                            Image(systemName: "arrow.right")
+                        }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 60)
+                        .background(Color.cyan)
+                        .cornerRadius(30)
+                        .shadow(color: .cyan.opacity(0.3), radius: 10, x: 0, y: 5)
+                    }
+                    
+                    // Mascot
+                    BluMascotView(customization: BluCustomization.defaultCustomization, size: 80)
+                        .shadow(color: .purple.opacity(0.3), radius: 10, x: 0, y: 5)
+                        .offset(y: -10) // Slight overlap effect
                 }
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+                .background(
+                    LinearGradient(colors: [.black.opacity(0), .black], startPoint: .top, endPoint: .bottom)
+                        .frame(height: 120)
+                )
+            }
+            .navigationBarHidden(true)
+            .fullScreenCover(isPresented: $showFocusMode) {
+                FocusModeView()
             }
         }
     }
-    
-    func addQuickTodo() {
-        guard !quickTodoText.isEmpty else { return }
-        let new = TodoItem(text: quickTodoText, isCompleted: false, order: todos.count)
-        modelContext.insert(new)
-        quickTodoText = ""
-        isAddFocused = false
-    }
 }
 
-// MARK: - Previews
-struct ExercisePreview: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("Active Now").font(.caption2).foregroundColor(.gray)
-            Text("Leg Day (Lower Body)").font(.subheadline).bold().foregroundColor(.white)
-            ProgressView(value: 0.4).tint(.cyan)
-        }
-    }
-}
+// MARK: - Subviews
 
-struct DietPreview: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("Next Meal").font(.caption2).foregroundColor(.gray)
-            Text("Chicken & Avocado").font(.subheadline).bold().foregroundColor(.white)
-            Text("at 1:30 PM").font(.caption).foregroundColor(.cyan)
-        }
-    }
-}
-
-struct WeightData: Identifiable {
-    let id = UUID()
-    let day: Int
-    let weight: Double
-}
-
-struct BodyPreview: View {
-    // Pre-calculate data to avoid complex inline expressions that confuse the compiler
-    let data: [WeightData] = (0..<7).map { i in
-        WeightData(day: i, weight: 185.0 - Double(i) * 0.2 + Double.random(in: -0.5...0.5))
-    }
+struct ProgressSquare: View {
+    let icon: String
+    let value: String
+    let label: String
+    let color: Color
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("Weight Trend")
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.title3)
+                .foregroundColor(color)
+            Text(value)
+                .font(.headline)
+                .foregroundColor(.white)
+            Text(label)
                 .font(.caption2)
                 .foregroundColor(.gray)
-            
-            // Mini Chart
-            Chart(data) { point in
-                LineMark(
-                    x: .value("Day", point.day),
-                    y: .value("Weight", point.weight)
-                )
-                .foregroundStyle(.cyan)
-                .interpolationMethod(.catmullRom)
-                
-                AreaMark(
-                    x: .value("Day", point.day),
-                    y: .value("Weight", point.weight)
-                )
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [.cyan.opacity(0.3), .clear],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-                .interpolationMethod(.catmullRom)
-            }
-            .chartXAxis(.hidden)
-            .chartYAxis(.hidden)
-            .frame(height: 60)
-            
-            HStack {
-                Text("183.2 lbs")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Spacer()
-                Text("-1.8%")
-                    .font(.caption)
-                    .foregroundColor(.green)
-            }
         }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background(Color(UIColor.systemGray6).opacity(0.2))
+        .cornerRadius(16)
     }
 }
 
-struct SmallMenuLink: View {
-    let title: String
-    let icon: String
-    let destination: AnyView
-    
-    var body: some View {
-        NavigationLink(destination: destination) {
-            VStack(spacing: 12) {
-                Image(systemName: icon).font(.title).foregroundColor(.white)
-                Text(title).font(.headline).fontWeight(.bold).foregroundColor(.white)
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 120)
-            .background(Color.white.opacity(0.1))
-            .cornerRadius(24)
-            .overlay(RoundedRectangle(cornerRadius: 24).stroke(Color.white.opacity(0.1), lineWidth: 1))
-        }
-    }
-}
+
