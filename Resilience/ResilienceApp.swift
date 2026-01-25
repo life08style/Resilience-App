@@ -1,11 +1,5 @@
-//
-//  ResilienceApp.swift
-//  Resilience
-//
-//  Created by Yakir Lieberman on 11/12/25.
-//
-
 import SwiftUI
+import SwiftData
 
 @main
 struct ResilienceApp: App {
@@ -13,5 +7,22 @@ struct ResilienceApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [
+            SleepSchedule.self,
+            TodoItem.self,
+            MealPlan.self,
+            WorkoutSession.self,
+            BodyMeasurement.self,
+            Habit.self,
+            HabitLog.self,
+            SavedRecipe.self,
+            ChatMessage.self,
+            PantryItem.self,
+            CartItem.self,
+            DailyNutritionLog.self,
+            SleepLog.self,
+            ExerciseLog.self,
+            ScreenTimeLog.self
+        ])
     }
 }

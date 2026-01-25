@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		C8C136362EC4F3FF005AC85B /* PBXContainerItemProxy */ = {
+		C80DE7B52ED7466B00E32042 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C8C136202EC4F3FD005AC85B /* Project object */;
+			containerPortal = C80DE79F2ED7466900E32042 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C8C136272EC4F3FD005AC85B;
+			remoteGlobalIDString = C80DE7A62ED7466A00E32042;
 			remoteInfo = Resilience;
 		};
-		C8C136402EC4F3FF005AC85B /* PBXContainerItemProxy */ = {
+		C80DE7BF2ED7466B00E32042 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C8C136202EC4F3FD005AC85B /* Project object */;
+			containerPortal = C80DE79F2ED7466900E32042 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C8C136272EC4F3FD005AC85B;
+			remoteGlobalIDString = C80DE7A62ED7466A00E32042;
 			remoteInfo = Resilience;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8C136282EC4F3FD005AC85B /* Resilience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resilience.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C136352EC4F3FF005AC85B /* ResilienceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResilienceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C1363F2EC4F3FF005AC85B /* ResilienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResilienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80DE7A72ED7466A00E32042 /* Resilience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resilience.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80DE7B42ED7466B00E32042 /* ResilienceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResilienceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80DE7BE2ED7466B00E32042 /* ResilienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResilienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C8C1362A2EC4F3FD005AC85B /* Resilience */ = {
+		C80DE7A92ED7466A00E32042 /* Resilience */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resilience;
 			sourceTree = "<group>";
 		};
-		C8C136382EC4F3FF005AC85B /* ResilienceTests */ = {
+		C80DE7B72ED7466B00E32042 /* ResilienceTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ResilienceTests;
 			sourceTree = "<group>";
 		};
-		C8C136422EC4F3FF005AC85B /* ResilienceUITests */ = {
+		C80DE7C12ED7466B00E32042 /* ResilienceUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ResilienceUITests;
 			sourceTree = "<group>";
@@ -48,21 +48,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C8C136252EC4F3FD005AC85B /* Frameworks */ = {
+		C80DE7A42ED7466A00E32042 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C136322EC4F3FF005AC85B /* Frameworks */ = {
+		C80DE7B12ED7466B00E32042 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C1363C2EC4F3FF005AC85B /* Frameworks */ = {
+		C80DE7BB2ED7466B00E32042 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C8C1361F2EC4F3FD005AC85B = {
+		C80DE79E2ED7466900E32042 = {
 			isa = PBXGroup;
 			children = (
-				C8C1362A2EC4F3FD005AC85B /* Resilience */,
-				C8C136382EC4F3FF005AC85B /* ResilienceTests */,
-				C8C136422EC4F3FF005AC85B /* ResilienceUITests */,
-				C8C136292EC4F3FD005AC85B /* Products */,
+				C80DE7A92ED7466A00E32042 /* Resilience */,
+				C80DE7B72ED7466B00E32042 /* ResilienceTests */,
+				C80DE7C12ED7466B00E32042 /* ResilienceUITests */,
+				C80DE7A82ED7466A00E32042 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C8C136292EC4F3FD005AC85B /* Products */ = {
+		C80DE7A82ED7466A00E32042 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8C136282EC4F3FD005AC85B /* Resilience.app */,
-				C8C136352EC4F3FF005AC85B /* ResilienceTests.xctest */,
-				C8C1363F2EC4F3FF005AC85B /* ResilienceUITests.xctest */,
+				C80DE7A72ED7466A00E32042 /* Resilience.app */,
+				C80DE7B42ED7466B00E32042 /* ResilienceTests.xctest */,
+				C80DE7BE2ED7466B00E32042 /* ResilienceUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,134 +95,135 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8C136272EC4F3FD005AC85B /* Resilience */ = {
+		C80DE7A62ED7466A00E32042 /* Resilience */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8C136492EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "Resilience" */;
+			buildConfigurationList = C80DE7C82ED7466B00E32042 /* Build configuration list for PBXNativeTarget "Resilience" */;
 			buildPhases = (
-				C8C136242EC4F3FD005AC85B /* Sources */,
-				C8C136252EC4F3FD005AC85B /* Frameworks */,
-				C8C136262EC4F3FD005AC85B /* Resources */,
+				C80DE7A32ED7466A00E32042 /* Sources */,
+				C80DE7A42ED7466A00E32042 /* Frameworks */,
+				C80DE7A52ED7466A00E32042 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				C8C1362A2EC4F3FD005AC85B /* Resilience */,
+				C80DE7A92ED7466A00E32042 /* Resilience */,
 			);
 			name = Resilience;
 			packageProductDependencies = (
 			);
 			productName = Resilience;
-			productReference = C8C136282EC4F3FD005AC85B /* Resilience.app */;
+			productReference = C80DE7A72ED7466A00E32042 /* Resilience.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C8C136342EC4F3FF005AC85B /* ResilienceTests */ = {
+		C80DE7B32ED7466B00E32042 /* ResilienceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8C1364C2EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "ResilienceTests" */;
+			buildConfigurationList = C80DE7CB2ED7466B00E32042 /* Build configuration list for PBXNativeTarget "ResilienceTests" */;
 			buildPhases = (
-				C8C136312EC4F3FF005AC85B /* Sources */,
-				C8C136322EC4F3FF005AC85B /* Frameworks */,
-				C8C136332EC4F3FF005AC85B /* Resources */,
+				C80DE7B02ED7466B00E32042 /* Sources */,
+				C80DE7B12ED7466B00E32042 /* Frameworks */,
+				C80DE7B22ED7466B00E32042 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C8C136372EC4F3FF005AC85B /* PBXTargetDependency */,
+				C80DE7B62ED7466B00E32042 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				C8C136382EC4F3FF005AC85B /* ResilienceTests */,
+				C80DE7B72ED7466B00E32042 /* ResilienceTests */,
 			);
 			name = ResilienceTests;
 			packageProductDependencies = (
 			);
 			productName = ResilienceTests;
-			productReference = C8C136352EC4F3FF005AC85B /* ResilienceTests.xctest */;
+			productReference = C80DE7B42ED7466B00E32042 /* ResilienceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C8C1363E2EC4F3FF005AC85B /* ResilienceUITests */ = {
+		C80DE7BD2ED7466B00E32042 /* ResilienceUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8C1364F2EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "ResilienceUITests" */;
+			buildConfigurationList = C80DE7CE2ED7466B00E32042 /* Build configuration list for PBXNativeTarget "ResilienceUITests" */;
 			buildPhases = (
-				C8C1363B2EC4F3FF005AC85B /* Sources */,
-				C8C1363C2EC4F3FF005AC85B /* Frameworks */,
-				C8C1363D2EC4F3FF005AC85B /* Resources */,
+				C80DE7BA2ED7466B00E32042 /* Sources */,
+				C80DE7BB2ED7466B00E32042 /* Frameworks */,
+				C80DE7BC2ED7466B00E32042 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C8C136412EC4F3FF005AC85B /* PBXTargetDependency */,
+				C80DE7C02ED7466B00E32042 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				C8C136422EC4F3FF005AC85B /* ResilienceUITests */,
+				C80DE7C12ED7466B00E32042 /* ResilienceUITests */,
 			);
 			name = ResilienceUITests;
 			packageProductDependencies = (
 			);
 			productName = ResilienceUITests;
-			productReference = C8C1363F2EC4F3FF005AC85B /* ResilienceUITests.xctest */;
+			productReference = C80DE7BE2ED7466B00E32042 /* ResilienceUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C8C136202EC4F3FD005AC85B /* Project object */ = {
+		C80DE79F2ED7466900E32042 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
-					C8C136272EC4F3FD005AC85B = {
-						CreatedOnToolsVersion = 26.0;
+					C80DE7A62ED7466A00E32042 = {
+						CreatedOnToolsVersion = 26.1.1;
+						LastSwiftMigration = 2610;
 					};
-					C8C136342EC4F3FF005AC85B = {
-						CreatedOnToolsVersion = 26.0;
-						TestTargetID = C8C136272EC4F3FD005AC85B;
+					C80DE7B32ED7466B00E32042 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = C80DE7A62ED7466A00E32042;
 					};
-					C8C1363E2EC4F3FF005AC85B = {
-						CreatedOnToolsVersion = 26.0;
-						TestTargetID = C8C136272EC4F3FD005AC85B;
+					C80DE7BD2ED7466B00E32042 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = C80DE7A62ED7466A00E32042;
 					};
 				};
 			};
-			buildConfigurationList = C8C136232EC4F3FD005AC85B /* Build configuration list for PBXProject "Resilience" */;
+			buildConfigurationList = C80DE7A22ED7466900E32042 /* Build configuration list for PBXProject "Resilience" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C8C1361F2EC4F3FD005AC85B;
+			mainGroup = C80DE79E2ED7466900E32042;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = C8C136292EC4F3FD005AC85B /* Products */;
+			productRefGroup = C80DE7A82ED7466A00E32042 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8C136272EC4F3FD005AC85B /* Resilience */,
-				C8C136342EC4F3FF005AC85B /* ResilienceTests */,
-				C8C1363E2EC4F3FF005AC85B /* ResilienceUITests */,
+				C80DE7A62ED7466A00E32042 /* Resilience */,
+				C80DE7B32ED7466B00E32042 /* ResilienceTests */,
+				C80DE7BD2ED7466B00E32042 /* ResilienceUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C8C136262EC4F3FD005AC85B /* Resources */ = {
+		C80DE7A52ED7466A00E32042 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C136332EC4F3FF005AC85B /* Resources */ = {
+		C80DE7B22ED7466B00E32042 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C1363D2EC4F3FF005AC85B /* Resources */ = {
+		C80DE7BC2ED7466B00E32042 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +233,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C8C136242EC4F3FD005AC85B /* Sources */ = {
+		C80DE7A32ED7466A00E32042 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C136312EC4F3FF005AC85B /* Sources */ = {
+		C80DE7B02ED7466B00E32042 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8C1363B2EC4F3FF005AC85B /* Sources */ = {
+		C80DE7BA2ED7466B00E32042 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +257,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C8C136372EC4F3FF005AC85B /* PBXTargetDependency */ = {
+		C80DE7B62ED7466B00E32042 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C8C136272EC4F3FD005AC85B /* Resilience */;
-			targetProxy = C8C136362EC4F3FF005AC85B /* PBXContainerItemProxy */;
+			target = C80DE7A62ED7466A00E32042 /* Resilience */;
+			targetProxy = C80DE7B52ED7466B00E32042 /* PBXContainerItemProxy */;
 		};
-		C8C136412EC4F3FF005AC85B /* PBXTargetDependency */ = {
+		C80DE7C02ED7466B00E32042 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C8C136272EC4F3FD005AC85B /* Resilience */;
-			targetProxy = C8C136402EC4F3FF005AC85B /* PBXContainerItemProxy */;
+			target = C80DE7A62ED7466A00E32042 /* Resilience */;
+			targetProxy = C80DE7BF2ED7466B00E32042 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		C8C136472EC4F3FF005AC85B /* Debug */ = {
+		C80DE7C62ED7466B00E32042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,7 +333,7 @@
 			};
 			name = Debug;
 		};
-		C8C136482EC4F3FF005AC85B /* Release */ = {
+		C80DE7C72ED7466B00E32042 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,13 +389,15 @@
 			};
 			name = Release;
 		};
-		C8C1364A2EC4F3FF005AC85B /* Debug */ = {
+		C80DE7C92ED7466B00E32042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2A9LKSBGST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -402,30 +405,35 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.Resilience;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Resilience/Resilience-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C8C1364B2EC4F3FF005AC85B /* Release */ = {
+		C80DE7CA2ED7466B00E32042 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2A9LKSBGST;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -433,33 +441,35 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.Resilience;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Resilience/Resilience-Bridging-Header.h";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		C8C1364D2EC4F3FF005AC85B /* Debug */ = {
+		C80DE7CC2ED7466B00E32042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.ResilienceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -471,16 +481,16 @@
 			};
 			name = Debug;
 		};
-		C8C1364E2EC4F3FF005AC85B /* Release */ = {
+		C80DE7CD2ED7466B00E32042 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.ResilienceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -492,14 +502,14 @@
 			};
 			name = Release;
 		};
-		C8C136502EC4F3FF005AC85B /* Debug */ = {
+		C80DE7CF2ED7466B00E32042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.ResilienceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -511,14 +521,14 @@
 			};
 			name = Debug;
 		};
-		C8C136512EC4F3FF005AC85B /* Release */ = {
+		C80DE7D02ED7466B00E32042 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Resilience.com.ResilienceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yakirlieberman.ResilienceAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -533,43 +543,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8C136232EC4F3FD005AC85B /* Build configuration list for PBXProject "Resilience" */ = {
+		C80DE7A22ED7466900E32042 /* Build configuration list for PBXProject "Resilience" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8C136472EC4F3FF005AC85B /* Debug */,
-				C8C136482EC4F3FF005AC85B /* Release */,
+				C80DE7C62ED7466B00E32042 /* Debug */,
+				C80DE7C72ED7466B00E32042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8C136492EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "Resilience" */ = {
+		C80DE7C82ED7466B00E32042 /* Build configuration list for PBXNativeTarget "Resilience" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8C1364A2EC4F3FF005AC85B /* Debug */,
-				C8C1364B2EC4F3FF005AC85B /* Release */,
+				C80DE7C92ED7466B00E32042 /* Debug */,
+				C80DE7CA2ED7466B00E32042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8C1364C2EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "ResilienceTests" */ = {
+		C80DE7CB2ED7466B00E32042 /* Build configuration list for PBXNativeTarget "ResilienceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8C1364D2EC4F3FF005AC85B /* Debug */,
-				C8C1364E2EC4F3FF005AC85B /* Release */,
+				C80DE7CC2ED7466B00E32042 /* Debug */,
+				C80DE7CD2ED7466B00E32042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8C1364F2EC4F3FF005AC85B /* Build configuration list for PBXNativeTarget "ResilienceUITests" */ = {
+		C80DE7CE2ED7466B00E32042 /* Build configuration list for PBXNativeTarget "ResilienceUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8C136502EC4F3FF005AC85B /* Debug */,
-				C8C136512EC4F3FF005AC85B /* Release */,
+				C80DE7CF2ED7466B00E32042 /* Debug */,
+				C80DE7D02ED7466B00E32042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C8C136202EC4F3FD005AC85B /* Project object */;
+	rootObject = C80DE79F2ED7466900E32042 /* Project object */;
 }
