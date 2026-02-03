@@ -9,6 +9,12 @@ struct CatalogFoodItem: Identifiable, Hashable {
     let proteinPerUnit: Double
     let carbsPerUnit: Double
     let fatPerUnit: Double
+    
+    var imageName: String {
+        name.lowercased()
+            .replacingOccurrences(of: " ", with: "_")
+            .replacingOccurrences(of: "-", with: "_")
+    }
 }
 
 struct FoodCatalog {

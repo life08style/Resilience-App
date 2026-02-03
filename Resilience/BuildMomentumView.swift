@@ -11,6 +11,7 @@ struct BuildMomentumView: View {
     // UI States
     @State private var quickTodoText: String = ""
     @State private var showFocusMode = false
+    @State private var showStartDay = false
     
     var body: some View {
         NavigationView {
@@ -214,12 +215,12 @@ struct BuildMomentumView: View {
                             
                             // Row 3: Pantry & Saved
                             HStack(spacing: 16) {
-                                NavigationLink(destination: PantryView()) {
+                                NavigationLink(destination: PantryView(showBackButton: true)) {
                                     VStack(spacing: 8) {
                                         HStack {
                                             Image(systemName: "cart")
-                                                .font(.title2)
-                                                .foregroundColor(.white)
+                                            .font(.title2)
+                                            .foregroundColor(.white)
                                             Spacer()
                                             Circle()
                                                 .fill(Color.green)
@@ -270,7 +271,7 @@ struct BuildMomentumView: View {
                 // Fixed Footer
                 HStack(spacing: 16) {
                     // Play Button Circle
-                    Button(action: { /* Play Action */ }) {
+                    Button(action: { showStartDay = true }) {
                         Circle()
                             .fill(
                                 LinearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -316,6 +317,9 @@ struct BuildMomentumView: View {
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $showFocusMode) {
                 FocusModeView()
+            }
+            .fullScreenCover(isPresented: $showStartDay) {
+                StartDayView()
             }
         }
     }

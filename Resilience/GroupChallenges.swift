@@ -3,9 +3,29 @@ import SwiftUI
 struct GroupChallenges: View {
     @State private var challenges: [GroupChallenge] = []
     @State private var filter: String = "active"
+    @State private var showAddChallenge = false
     
     var body: some View {
         VStack(spacing: 16) {
+            // Header with Plus Button
+            HStack {
+                 Text("My Challenges")
+                     .font(.title2)
+                     .fontWeight(.bold)
+                     .foregroundColor(.white)
+                 
+                 Spacer()
+                 
+                 Button(action: {
+                     showAddChallenge = true
+                 }) {
+                     Image(systemName: "plus.circle.fill")
+                         .font(.title2) // Increased size slightly
+                         .foregroundColor(.white) // Make it stand out
+                 }
+             }
+             .padding(.horizontal)
+             
             // Filter Tabs
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
@@ -34,6 +54,22 @@ struct GroupChallenges: View {
             }
         }
         .padding(.vertical)
+        .sheet(isPresented: $showAddChallenge) {
+            AddChallengeView { newChallenge in
+                // Add the new challenge to the list
+                // In a real app, this would persist to a backend/database
+                var challengeToAdd = newChallenge
+                // Create participant from current user
+                let participant = ChallengeParticipant(
+                    userEmail: User.currentUser.email,
+                    userName: User.currentUser.fullName,
+                    currentProgress: 0,
+                    joinedDate: Date()
+                )
+                challengeToAdd.participants.append(participant)
+                self.challenges.append(challengeToAdd)
+            }
+        }
         .onAppear(perform: loadChallenges)
     }
     

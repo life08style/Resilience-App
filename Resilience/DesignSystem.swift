@@ -52,6 +52,7 @@ struct ResiliencePage<Content: View>: View {
             ResilienceAppBar(showBackButton: showBackButton)
         }
         .navigationBarHidden(true)
+        .enableSwipeBack()
     }
 }
 // MARK: - Shared UI Components

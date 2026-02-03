@@ -8,49 +8,50 @@ struct MusicLibraryView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                // Header
-                Text("Music Library")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+        ResiliencePage(showBackButton: true) {
+            ScrollView {
+                VStack(spacing: 24) {
+                    // Header with Picker
+                    HStack {
+                        Text("Music Library")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        Picker("Service", selection: $settings.preferredMusicService) {
+                            Image(systemName: "applelogo").tag("apple_music")
+                            Image(systemName: "waveform.circle.fill").tag("spotify")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .frame(width: 100)
+                    }
                     .padding(.horizontal)
                     .padding(.top)
-                
-                // Categories
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        CategoryPill(title: "All", isSelected: true)
-                        CategoryPill(title: "Workout", isSelected: false)
-                        CategoryPill(title: "Focus", isSelected: false)
-                        CategoryPill(title: "Sleep", isSelected: false)
+                    
+                    // Categories
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 16) {
+                            CategoryPill(title: "All", isSelected: true)
+                            CategoryPill(title: "Workout", isSelected: false)
+                            CategoryPill(title: "Focus", isSelected: false)
+                            CategoryPill(title: "Sleep", isSelected: false)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    // Playlists Grid
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                        ForEach(playlists) { playlist in
+                            PlaylistCard(playlist: playlist)
+                        }
                     }
                     .padding(.horizontal)
                 }
-                
-                // Playlists Grid
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                    ForEach(playlists) { playlist in
-                        PlaylistCard(playlist: playlist)
-                    }
-                }
-                .padding(.horizontal)
+                .padding(.bottom)
             }
-            .padding(.bottom)
-        }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
-        .navigationTitle("Music")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Picker("Service", selection: $settings.preferredMusicService) {
-                    Image(systemName: "applelogo").tag("apple_music")
-                    Image(systemName: "waveform.circle.fill").tag("spotify")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .frame(width: 100)
-            }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
         }
     }
     

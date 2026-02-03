@@ -31,7 +31,9 @@ struct HomeView: View {
                 }
                 .tag(3)
             
-            PantryView()
+            NavigationView {
+                PantryView(showBackButton: false)
+            }
                 .tabItem {
                     Label("Store", systemImage: "cart.fill")
                 }
@@ -338,10 +340,18 @@ struct CalendarView: View {
                 // Sub-Header (Date & View Modes)
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(formatDate(currentDate))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+                        Button(action: {
+                            withAnimation {
+                                currentDate = Date()
+                                selectedDate = Date()
+                                viewMode = .day
+                            }
+                        }) {
+                            Text(formatDate(currentDate))
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
                         
                         HStack(spacing: 12) {
                             Button(action: { viewMode = .month }) {
@@ -383,8 +393,10 @@ struct CalendarView: View {
                         }
                         
                         Button("Today") {
-                            currentDate = Date()
-                            selectedDate = Date()
+                            withAnimation {
+                                currentDate = Date()
+                                selectedDate = Date()
+                            }
                         }
                         .font(.caption)
                         .padding(.horizontal, 12)
@@ -417,9 +429,33 @@ struct CalendarView: View {
                     MonthGrid(currentDate: $currentDate, selectedDate: $selectedDate, events: calendarManager.events)
                         .padding()
                         .transition(.opacity)
+                        .gesture(
+                            DragGesture()
+                                .onEnded { value in
+                                    if value.translation.width < 0 {
+                                        // Swipe Left -> Next Month
+                                        moveDate(by: 1)
+                                    } else if value.translation.width > 0 {
+                                        // Swipe Right -> Previous Month
+                                        moveDate(by: -1)
+                                    }
+                                }
+                        )
                 } else {
                     DaySchedule(date: selectedDate, events: calendarManager.events.filter { Calendar.current.isDate($0.date, inSameDayAs: selectedDate) })
                         .transition(.opacity)
+                        .gesture(
+                            DragGesture()
+                                .onEnded { value in
+                                    if value.translation.width < 0 {
+                                        // Swipe Left -> Next Day
+                                        moveDate(by: 1)
+                                    } else if value.translation.width > 0 {
+                                        // Swipe Right -> Previous Day
+                                        moveDate(by: -1)
+                                    }
+                                }
+                        )
                 }
             }
         }
@@ -431,14 +467,16 @@ struct CalendarView: View {
     }
     
     func moveDate(by value: Int) {
-        if viewMode == .day {
-            if let newDate = Calendar.current.date(byAdding: .day, value: value, to: currentDate) {
-                currentDate = newDate
-                selectedDate = newDate
-            }
-        } else {
-            if let newDate = Calendar.current.date(byAdding: .month, value: value, to: currentDate) {
-                currentDate = newDate
+        withAnimation {
+            if viewMode == .day {
+                if let newDate = Calendar.current.date(byAdding: .day, value: value, to: currentDate) {
+                    currentDate = newDate
+                    selectedDate = newDate
+                }
+            } else {
+                if let newDate = Calendar.current.date(byAdding: .month, value: value, to: currentDate) {
+                    currentDate = newDate
+                }
             }
         }
     }

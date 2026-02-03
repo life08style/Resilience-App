@@ -9,6 +9,8 @@ struct PantryView: View {
     @State private var searchQuery = ""
     @State private var showCustomAdd = false
     
+    var showBackButton: Bool = true
+    
     var filteredCatalog: [CatalogFoodItem] {
         if searchQuery.isEmpty { return [] }
         return FoodCatalog.items.filter { $0.name.localizedCaseInsensitiveContains(searchQuery) }
@@ -19,7 +21,7 @@ struct PantryView: View {
     }
     
     var body: some View {
-        ResiliencePage(showBackButton: true) {
+        ResiliencePage(showBackButton: showBackButton) {
             VStack(spacing: 0) {
                 // Header
                 HStack {
@@ -159,6 +161,13 @@ struct CatalogSearchRow: View {
     
     var body: some View {
         HStack {
+            Image(item.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 40, height: 40)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.1), lineWidth: 1))
+            
             VStack(alignment: .leading) {
                 Text(item.name).foregroundColor(.white)
                 Text(item.category).font(.caption2).foregroundColor(.gray)

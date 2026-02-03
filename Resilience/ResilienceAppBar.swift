@@ -5,27 +5,27 @@ struct ResilienceAppBar: View {
     
     var showBackButton: Bool = true
     @State private var showSettings = false
+    @State private var showProfile = false
     
     var body: some View {
-        HStack(spacing: 0) {
-            // Left Group: Back Button ONLY (or empty spacer if root)
-            HStack(spacing: 12) {
-                if showBackButton {
-                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                        Image(systemName: "arrow.left")
-                            .font(.system(size: 20, weight: .bold)) // Slightly larger
-                            .foregroundColor(.white)
-                            .padding(8)
-                            .background(Circle().fill(Color.white.opacity(0.1)))
-                    }
-                } else {
-                    // Placeholder to balance layout if needed, or just nothing
-                    Color.clear.frame(width: 40, height: 40)
+        ZStack {
+            // Left: Back Button
+            if showBackButton {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.white.opacity(0.1))
+                        .clipShape(Circle())
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .zIndex(1) // Ensure it's on top
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            // Center Group: Resilience Wordmark
+
+            // Center: Resilience Wordmark
             Text("Resilience")
                 .font(.system(size: 22, weight: .black, design: .rounded))
                 .tracking(1)
@@ -58,7 +58,7 @@ struct ResilienceAppBar: View {
                 }
                 
                 // User Button (Now on Right)
-                Button(action: {}) {
+                Button(action: { showProfile = true }) {
                     ZStack {
                         Circle()
                             .stroke(
@@ -87,6 +87,11 @@ struct ResilienceAppBar: View {
         .sheet(isPresented: $showSettings) {
             NavigationView {
                 SettingsHubView()
+            }
+        }
+        .sheet(isPresented: $showProfile) {
+            NavigationView {
+                UserProfileView(user: User.currentUser)
             }
         }
     }

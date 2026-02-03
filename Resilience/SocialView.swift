@@ -43,16 +43,7 @@ struct SocialView: View {
                                 .padding(.bottom, 100)
                         }
                     } else {
-                        VStack {
-                            Spacer()
-                            Image(systemName: "bubble.left.and.bubble.right")
-                                .font(.system(size: 50))
-                                .foregroundColor(.gray)
-                                .padding()
-                            Text("Messages Coming Soon")
-                                .foregroundColor(.gray)
-                            Spacer()
-                        }
+                        MessagesListView()
                     }
                 }
             }

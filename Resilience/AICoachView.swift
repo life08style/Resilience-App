@@ -42,7 +42,7 @@ struct AICoachView: View {
                 ScrollView {
                     LazyVStack(spacing: 16) {
                         ForEach(messages) { message in
-                            MessageBubble(message: message)
+                            AIMessageBubble(message: message)
                                 .id(message.id)
                         }
                         
@@ -125,7 +125,7 @@ struct AICoachView: View {
     }
 }
 
-struct MessageBubble: View {
+struct AIMessageBubble: View {
     let message: ChatMessage
     
     var body: some View {

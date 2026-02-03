@@ -6,55 +6,55 @@ struct SavedHubView: View {
     let tabs = ["Recipes", "Exercises", "Sleep", "Plans"]
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            HStack {
-                Text("Saved")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer()
-            }
-            .padding()
-            .padding(.top, 40)
-            
-            // Tab Bar
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(tabs, id: \.self) { tab in
-                        Button(action: { selectedTab = tab }) {
-                            VStack(spacing: 8) {
-                                Text(tab)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(selectedTab == tab ? .white : .gray)
-                                
-                                Capsule()
-                                    .fill(selectedTab == tab ? Color.blue : Color.clear)
-                                    .frame(height: 3)
+        ResiliencePage(showBackButton: true) {
+            VStack(spacing: 0) {
+                // Header
+                HStack {
+                    Text("Saved")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding()
+                
+                // Tab Bar
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(tabs, id: \.self) { tab in
+                            Button(action: { selectedTab = tab }) {
+                                VStack(spacing: 8) {
+                                    Text(tab)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(selectedTab == tab ? .white : .gray)
+                                    
+                                    Capsule()
+                                        .fill(selectedTab == tab ? Color.blue : Color.clear)
+                                        .frame(height: 3)
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-            }
-            .padding(.bottom)
-            
-            // Content
-            ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                .padding(.bottom)
                 
-                if selectedTab == "Recipes" {
-                    SavedRecipesView()
-                } else if selectedTab == "Exercises" {
-                    SavedExercisesView()
-                } else if selectedTab == "Sleep" {
-                    SavedSleepView()
-                } else if selectedTab == "Plans" {
-                    SavedPlansView()
+                // Content
+                ZStack {
+                    Color.black.edgesIgnoringSafeArea(.all)
+                    
+                    if selectedTab == "Recipes" {
+                        SavedRecipesView()
+                    } else if selectedTab == "Exercises" {
+                        SavedExercisesView()
+                    } else if selectedTab == "Sleep" {
+                        SavedSleepView()
+                    } else if selectedTab == "Plans" {
+                        SavedPlansView()
+                    }
                 }
             }
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 

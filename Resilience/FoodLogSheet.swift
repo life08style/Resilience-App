@@ -93,14 +93,21 @@ struct FoodLogSheet: View {
                     ForEach(filteredFoods) { food in
                         Button(action: { selectedFood = food }) {
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text(food.name)
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                    Text(food.category)
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                }
+                                    Image(food.imageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.1), lineWidth: 1))
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(food.name)
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                        Text(food.category)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
                                 Spacer()
                                 Text(food.defaultUnit)
                                     .font(.caption)
@@ -119,6 +126,12 @@ struct FoodLogSheet: View {
     private func loggingForm(for food: CatalogFoodItem) -> some View {
         VStack(spacing: 30) {
             VStack(spacing: 12) {
+                Image(food.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 150)
+                    .cornerRadius(20)
+                
                 Text(food.name)
                     .font(.title2)
                     .fontWeight(.bold)

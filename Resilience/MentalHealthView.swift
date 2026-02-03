@@ -11,17 +11,18 @@ struct MentalHealthView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                headerView
-                dailyCheckInCard
-                featuresGrid
+        ResiliencePage(showBackButton: true) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    headerView
+                    dailyCheckInCard
+                    featuresGrid
+                }
+                .padding(.vertical)
             }
-            .padding(.vertical)
+            .background(DesignSystem.Colors.background.edgesIgnoringSafeArea(.all))
+            .foregroundColor(.white)
         }
-        .navigationTitle("Mental Health")
-        .background(DesignSystem.Colors.background.edgesIgnoringSafeArea(.all))
-        .foregroundColor(.white)
     }
     
     private var headerView: some View {

@@ -2,67 +2,69 @@ import SwiftUI
 
 struct SubscriptionView: View {
     var body: some View {
-        ScrollView {
-            VStack(spacing: 32) {
-                // Header Image / Hero
-                VStack(spacing: 16) {
-                    Image(systemName: "crown.fill")
-                        .font(.system(size: 64))
-                        .foregroundStyle(LinearGradient(colors: [.yellow, .orange], startPoint: .top, endPoint: .bottom))
-                        .padding(.top, 40)
+        ResiliencePage(showBackButton: true) {
+            ScrollView {
+                VStack(spacing: 32) {
+                    // Header Image / Hero
+                    VStack(spacing: 16) {
+                        Image(systemName: "crown.fill")
+                            .font(.system(size: 64))
+                            .foregroundStyle(LinearGradient(colors: [.yellow, .orange], startPoint: .top, endPoint: .bottom))
+                            .padding(.top, 40)
+                        
+                        Text("Unlock Premium")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundColor(.white)
+                        
+                        Text("Supercharge your productivity and fitness journey.")
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal)
+                    }
                     
-                    Text("Unlock Premium")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                        .foregroundColor(.white)
+                    // Features List
+                    VStack(alignment: .leading, spacing: 20) {
+                        FeatureRow(icon: "brain.head.profile", title: "Advanced AI Coaching", description: "Unlimited personalized advice")
+                        FeatureRow(icon: "chart.xyaxis.line", title: "Detailed Analytics", description: "Deep dive into your stats")
+                        FeatureRow(icon: "cloud.fill", title: "Cloud Sync", description: "Access data across all devices")
+                        FeatureRow(icon: "lock.open.fill", title: "Unlimited Habits", description: "Track as many habits as you want")
+                    }
+                    .padding()
+                    .background(Color(UIColor.systemGray6).opacity(0.1))
+                    .cornerRadius(20)
+                    .padding(.horizontal)
                     
-                    Text("Supercharge your productivity and fitness journey.")
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
+                    // Pricing Cards
+                    HStack(spacing: 16) {
+                        PricingCard(title: "Monthly", price: "$9.99", period: "/mo", isPopular: false)
+                        PricingCard(title: "Yearly", price: "$79.99", period: "/yr", isPopular: true)
+                    }
+                    .padding(.horizontal)
+                    
+                    // CTA Button
+                    Button(action: {}) {
+                        Text("Start 7-Day Free Trial")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(16)
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 40)
+                    
+                    Text("Restore Purchases")
+                        .font(.caption)
                         .foregroundColor(.gray)
-                        .padding(.horizontal)
+                        .underline()
                 }
-                
-                // Features List
-                VStack(alignment: .leading, spacing: 20) {
-                    FeatureRow(icon: "brain.head.profile", title: "Advanced AI Coaching", description: "Unlimited personalized advice")
-                    FeatureRow(icon: "chart.xyaxis.line", title: "Detailed Analytics", description: "Deep dive into your stats")
-                    FeatureRow(icon: "cloud.fill", title: "Cloud Sync", description: "Access data across all devices")
-                    FeatureRow(icon: "lock.open.fill", title: "Unlimited Habits", description: "Track as many habits as you want")
-                }
-                .padding()
-                .background(Color(UIColor.systemGray6).opacity(0.1))
-                .cornerRadius(20)
-                .padding(.horizontal)
-                
-                // Pricing Cards
-                HStack(spacing: 16) {
-                    PricingCard(title: "Monthly", price: "$9.99", period: "/mo", isPopular: false)
-                    PricingCard(title: "Yearly", price: "$79.99", period: "/yr", isPopular: true)
-                }
-                .padding(.horizontal)
-                
-                // CTA Button
-                Button(action: {}) {
-                    Text("Start 7-Day Free Trial")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(16)
-                }
-                .padding(.horizontal)
-                .padding(.bottom, 40)
-                
-                Text("Restore Purchases")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .underline()
             }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 

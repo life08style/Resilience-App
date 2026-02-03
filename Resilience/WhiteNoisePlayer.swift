@@ -115,12 +115,26 @@ struct WhiteNoisePlayer: View {
                     .padding()
                 }
                 Spacer()
+                
+                Spacer()
             }
+            // Stop sounds when the view is dismissed
+            .onDisappear {
+                WhiteNoiseEngine.shared.stopAll()
+            }
+            // Ensure sounds match active state if needed (optional re-sync logic could go here)
         }
         .navigationBarHidden(true)
     }
     
     func toggle(_ sound: String) {
+        // Haptic Feedback
+        HapticManager.shared.impact(style: .medium)
+        
+        // Sound Logic
+        _ = WhiteNoiseEngine.shared.toggleSound(named: sound)
+        
+        // UI State Update
         if activeSounds.contains(sound) {
             activeSounds.remove(sound)
         } else {
