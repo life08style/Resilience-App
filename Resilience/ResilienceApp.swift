@@ -22,7 +22,9 @@ struct ResilienceApp: App {
             DailyNutritionLog.self,
             SleepLog.self,
             ExerciseLog.self,
-            ScreenTimeLog.self
+            ScreenTimeLog.self,
+            SocialConversation.self,
+            SocialMessage.self
         ])
     }
 }

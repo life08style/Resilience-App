@@ -39,19 +39,6 @@ struct HomeView: View {
                 }
                 .tag(4)
         }
-        .modelContainer(for: [
-            Habit.self,
-            HabitLog.self,
-            SleepSchedule.self,
-            TodoItem.self,
-            MealPlan.self,
-            SavedRecipe.self,
-            WorkoutSession.self,
-            BodyMeasurement.self,
-            ChatMessage.self,
-            PantryItem.self,
-            CartItem.self
-        ])
         .accentColor(DesignSystem.Colors.primary)
         .preferredColorScheme(.dark)
         .onChange(of: selectedTab) { oldValue, newValue in
