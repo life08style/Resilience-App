@@ -113,7 +113,10 @@ struct AICoachView: View {
             } catch {
                 await MainActor.run {
                     isTyping = false
-                    let errorMsg = ChatMessage(text: "Sorry, I'm having trouble connecting. Please check your internet or API key.", isUser: false, timestamp: Date())
+                    let errorText = error.localizedDescription.contains("YOUR_GEMINI_API_KEY")
+                        ? "⚠️ Please add your Gemini API key in AIService.swift. Get one free at aistudio.google.com"
+                        : "⚠️ Error: \(error.localizedDescription)"
+                    let errorMsg = ChatMessage(text: errorText, isUser: false, timestamp: Date())
                     modelContext.insert(errorMsg)
                 }
             }

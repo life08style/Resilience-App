@@ -163,12 +163,34 @@ struct DietView: View {
     }
     
     private var filteredRecipes: [RecipeModel] {
-        let recipes = randomizedRecipes
-        return recipes.filter { recipe in
-            let matchesCategory = selectedCategory == "All" || recipe.category == selectedCategory
-            let matchesSearch = searchText.isEmpty || recipe.title.localizedCaseInsensitiveContains(searchText) || recipe.tags.contains { $0.localizedCaseInsensitiveContains(searchText) }
-            return matchesCategory && matchesSearch
+        var recipes = randomizedRecipes
+        
+        // Apply category filter first
+        if selectedCategory != "All" {
+            recipes = recipes.filter { $0.category == selectedCategory }
         }
+        
+        // Apply fuzzy search if there's search text
+        if !searchText.isEmpty {
+            let fuzzyMatched = FuzzySearch.search(query: searchText, in: recipes, by: \RecipeModel.title)
+            // Also include tag matches
+            let tagMatches = recipes.filter { recipe in
+                recipe.tags.contains { tag in
+                    tag.localizedCaseInsensitiveContains(searchText)
+                }
+            }
+            // Merge: fuzzy title matches first, then tag-only matches
+            var seen = Set<UUID>()
+            var merged: [RecipeModel] = []
+            for r in fuzzyMatched + tagMatches {
+                if seen.insert(r.id).inserted {
+                    merged.append(r)
+                }
+            }
+            return merged
+        }
+        
+        return recipes
     }
     
     private var randomizedRecipes: [RecipeModel] {

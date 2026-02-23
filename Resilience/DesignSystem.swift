@@ -45,6 +45,7 @@ struct ResiliencePage<Content: View>: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color.black.edgesIgnoringSafeArea(.all)
+                .allowsHitTesting(false)
             
             content
                 .padding(.top, 85) // Raised from 110

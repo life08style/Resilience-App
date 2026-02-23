@@ -3,14 +3,20 @@ import Foundation
 class AIService {
     static let shared = AIService()
     
-    // REPLACE WITH YOUR ACTUAL API KEY
+    // REPLACE WITH YOUR ACTUAL API KEY from https://aistudio.google.com/app/apikey
     private let apiKey = "YOUR_GEMINI_API_KEY"
-    private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+    private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+    
+    private let systemInstruction = """
+    You are an expert AI fitness and life coach inside the Resilience app. \
+    You help users with workout plans, nutrition advice, sleep optimization, mental health, \
+    productivity, and building resilient habits. Be concise, motivating, and highly practical. \
+    Always tailor your advice to the user's specific goals and questions.
+    """
     
     private init() {}
     
     func sendMessage(history: [ChatMessage], newMessage: String) async throws -> String {
-        // Construct the prompt from history
         var contents: [[String: Any]] = []
         
         for message in history {
@@ -23,7 +29,6 @@ class AIService {
             ])
         }
         
-        // Add the new message
         contents.append([
             "role": "user",
             "parts": [
@@ -32,6 +37,9 @@ class AIService {
         ])
         
         let body: [String: Any] = [
+            "system_instruction": [
+                "parts": [["text": systemInstruction]]
+            ],
             "contents": contents
         ]
         
@@ -60,6 +68,9 @@ class AIService {
         """
         
         let body: [String: Any] = [
+            "system_instruction": [
+                "parts": [["text": systemInstruction]]
+            ],
             "contents": [
                 [
                     "role": "user",
@@ -85,11 +96,17 @@ class AIService {
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+            // Surface the actual API error message for easier debugging
+            if let errorJson = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let error = errorJson["error"] as? [String: Any],
+               let message = error["message"] as? String {
+                throw NSError(domain: "AIService", code: httpResponse.statusCode,
+                              userInfo: [NSLocalizedDescriptionKey: message])
+            }
             throw URLError(.badServerResponse)
         }
         
-        // Parse Gemini Response
         if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
            let candidates = json["candidates"] as? [[String: Any]],
            let firstCandidate = candidates.first,
@@ -103,3 +120,4 @@ class AIService {
         throw URLError(.cannotParseResponse)
     }
 }
+

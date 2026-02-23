@@ -14,9 +14,11 @@ struct FocusModeView: View {
     @State private var timeRemaining: TimeInterval = 25 * 60
     @State private var isActive = false
     @State private var showGiveUpAlert = false
-    @State private var giveUpStep = 0
     @State private var showMusicSheet = false
     @State private var showAlertNotify = false
+    @State private var showQuitCountdown = false
+    @State private var countdownValue: Int = 5
+    @State private var countdownTimer: Timer? = nil
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -65,45 +67,50 @@ struct FocusModeView: View {
                 triggerAmberAlert()
             }
         }
-        // Comical Give Up Alerts
-        .alert("Are you reaching for the chips?", isPresented: $showGiveUpAlert) {
-            Button("I'm Staying", role: .cancel) { giveUpStep = 0 }
-            Button("Yes, I'm weak", role: .destructive) {
-                giveUpStep = 2
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    showGiveUpAlert = true 
-                }
+        // Give Up Alert — single motivational warning
+        .alert("You're stronger than this!", isPresented: $showGiveUpAlert) {
+            Button("Keep Going", role: .cancel) { }
+            Button("Quit Session", role: .destructive) {
+                startQuitCountdown()
             }
         } message: {
-            Text("Your future self is watching. Don't let them down.")
+            Text("Champions don't quit halfway. Stay focused and finish what you started.")
         }
-        // Second Alert (Simulated via overlay or subsequent state if possible)
-        // Note: SwiftUI multiple alerts can be tricky, using a state machine for alerts.
+        // Quit countdown overlay
         .overlay {
-            if giveUpStep == 2 {
-                Color.clear.alert("Weakness is not an option...", isPresented: .constant(true)) {
-                    Button("I'll Win", role: .cancel) { giveUpStep = 0 }
-                    Button("I'm a quitter", role: .destructive) {
-                        giveUpStep = 3
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            showGiveUpAlert = true
+            if showQuitCountdown {
+                ZStack {
+                    Color.black.opacity(0.85)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    VStack(spacing: 24) {
+                        Text("Quitting in...")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white.opacity(0.7))
+                        
+                        Text("\(countdownValue)")
+                            .font(.system(size: 96, weight: .heavy, design: .rounded))
+                            .foregroundColor(.white)
+                            .contentTransition(.numericText())
+                            .animation(.easeInOut(duration: 0.3), value: countdownValue)
+                        
+                        Button(action: { cancelQuitCountdown() }) {
+                            Text("CANCEL")
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .frame(width: 180)
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(20)
                         }
+                        .padding(.top, 16)
                     }
-                } message: {
-                    Text("Blu is crying. Do you really want to see a mascot cry?")
                 }
-            } else if giveUpStep == 3 {
-                Color.clear.alert("Last chance to stay a winner!", isPresented: .constant(true)) {
-                    Button("Finish Strong", role: .cancel) { giveUpStep = 0 }
-                    Button("I Give Up", role: .destructive) {
-                        isActive = false
-                        dismiss()
-                    }
-                } message: {
-                    Text("If you quit now, the ghosts of productivity will haunt you forever.")
-                }
+                .transition(.opacity)
             }
         }
+        .animation(.easeInOut(duration: 0.25), value: showQuitCountdown)
         .sheet(isPresented: $showMusicSheet) {
             NavigationView {
                 MusicLibraryView()
@@ -123,7 +130,6 @@ struct FocusModeView: View {
             Button(action: { 
                 if isActive {
                     showGiveUpAlert = true
-                    giveUpStep = 1
                 } else {
                     dismiss()
                 }
@@ -293,6 +299,33 @@ struct FocusModeView: View {
         todo.isCompleted.toggle()
         HapticManager.shared.impact(style: .light)
         try? modelContext.save()
+    }
+    
+    func startQuitCountdown() {
+        countdownValue = 5
+        showQuitCountdown = true
+        HapticManager.shared.impact(style: .medium)
+        
+        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if countdownValue > 1 {
+                countdownValue -= 1
+                HapticManager.shared.impact(style: .light)
+            } else {
+                timer.invalidate()
+                countdownTimer = nil
+                showQuitCountdown = false
+                isActive = false
+                dismiss()
+            }
+        }
+    }
+    
+    func cancelQuitCountdown() {
+        countdownTimer?.invalidate()
+        countdownTimer = nil
+        showQuitCountdown = false
+        countdownValue = 5
+        HapticManager.shared.notification(type: .success)
     }
     
     func requestNotificationPermission() {

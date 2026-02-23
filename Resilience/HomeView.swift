@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import Combine
 
 
 struct HomeView: View {
@@ -43,6 +44,14 @@ struct HomeView: View {
         .preferredColorScheme(.dark)
         .onChange(of: selectedTab) { oldValue, newValue in
             HapticManager.shared.selection()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .navigateToHome)) { _ in
+            if selectedTab != 0 {
+                withAnimation {
+                    selectedTab = 0
+                }
+                HapticManager.shared.selection()
+            }
         }
     }
 }

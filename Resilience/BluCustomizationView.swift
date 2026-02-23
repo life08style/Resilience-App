@@ -10,7 +10,6 @@ struct BluCustomizationView: View {
     let colors = ["blue", "purple", "green", "orange", "pink"]
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
                     // Preview
@@ -65,7 +64,6 @@ struct BluCustomizationView: View {
                     }
                 }
             }
-        }
     }
     
     func customizationSection(title: String, options: [String], selection: Binding<String>) -> some View {

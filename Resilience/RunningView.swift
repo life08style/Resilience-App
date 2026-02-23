@@ -47,7 +47,6 @@ struct RunningView: View {
     }
     
     var body: some View {
-        NavigationView {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
@@ -175,7 +174,6 @@ struct RunningView: View {
                 }
             }
             .navigationBarHidden(true)
-        }
     }
     
     func convertKmToMiles(_ kmString: String) -> String {

@@ -187,3 +187,151 @@ struct WoodenSignButton: View {
         }
     }
 }
+
+// MARK: - White Noise Detail Sheet
+
+struct WhiteNoiseDetailSheet: View {
+    @Environment(\.dismiss) var dismiss
+
+    let sounds: [(name: String, icon: String, description: String)] = [
+        ("Ocean",       "water.waves",          "Gentle rolling waves — ideal for deep sleep"),
+        ("Rain",        "cloud.rain.fill",       "Steady rainfall — masks distracting noises"),
+        ("Thunder",     "bolt.fill",             "Low rumbling thunder — comforting and grounding"),
+        ("Wind",        "wind",                  "Soft breeze — calming white noise baseline"),
+        ("Fire",        "flame.fill",            "Crackling campfire — warm and cosy"),
+        ("Thunderstorm","cloud.bolt.rain.fill",  "Full storm ambiance — powerful masking"),
+        ("Birds",       "bird.fill",             "Dawn chorus — gentle morning transition"),
+        ("Fan",         "fan.fill",              "Constant fan hum — classic white noise")
+    ]
+
+    var body: some View {
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+
+            VStack(spacing: 0) {
+                // Header
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("White Noise")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Text("Mix sounds for the perfect sleep environment")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 28))
+                            .foregroundColor(.white.opacity(0.5))
+                    }
+                }
+                .padding()
+
+                Divider().background(Color.white.opacity(0.1))
+
+                ScrollView {
+                    VStack(spacing: 0) {
+                        // How it works section
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("How It Works", systemImage: "info.circle.fill")
+                                .font(.headline)
+                                .foregroundColor(.purple)
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                HowItWorksRow(icon: "hand.tap.fill",       text: "Tap a sound to toggle it on or off")
+                                HowItWorksRow(icon: "waveform.badge.plus", text: "Layer multiple sounds together")
+                                HowItWorksRow(icon: "moon.zzz.fill",       text: "Sounds stop automatically when you close the player")
+                            }
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color.purple.opacity(0.08))
+                        .cornerRadius(16)
+                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.purple.opacity(0.2), lineWidth: 1))
+                        .padding(.horizontal)
+                        .padding(.top, 16)
+
+                        // Sound catalogue
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("Available Sounds", systemImage: "speaker.wave.3.fill")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                                .padding(.top, 20)
+
+                            VStack(spacing: 10) {
+                                ForEach(sounds, id: \.name) { sound in
+                                    HStack(spacing: 14) {
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color.purple.opacity(0.15))
+                                                .frame(width: 44, height: 44)
+                                            Image(systemName: sound.icon)
+                                                .font(.system(size: 18))
+                                                .foregroundColor(.purple)
+                                        }
+
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(sound.name)
+                                                .font(.subheadline)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                            Text(sound.description)
+                                                .font(.caption)
+                                                .foregroundColor(.gray)
+                                        }
+
+                                        Spacer()
+                                    }
+                                    .padding(.horizontal)
+                                }
+                            }
+                        }
+
+                        Spacer().frame(height: 32)
+
+                        // Open player button
+                        NavigationLink(destination: WhiteNoisePlayer()) {
+                            Label("Open White Noise Player", systemImage: "play.fill")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(
+                                    LinearGradient(
+                                        colors: [Color.purple, Color(red: 0.4, green: 0.1, blue: 0.7)],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .cornerRadius(16)
+                                .shadow(color: .purple.opacity(0.4), radius: 8, y: 4)
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 32)
+                    }
+                }
+            }
+        }
+        .navigationBarHidden(true)
+    }
+}
+
+struct HowItWorksRow: View {
+    let icon: String
+    let text: String
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: icon)
+                .font(.system(size: 13))
+                .foregroundColor(.purple)
+                .frame(width: 20)
+            Text(text)
+                .font(.subheadline)
+                .foregroundColor(.white.opacity(0.8))
+        }
+    }
+}

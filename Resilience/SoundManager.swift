@@ -1,16 +1,34 @@
 import Foundation
 import Combine
 import AVFoundation
+import AudioToolbox
 
 class SoundManager: ObservableObject {
     
     static let shared = SoundManager()
     
     private var audioPlayer: AVAudioPlayer?
+    private var streamPlayer: AVPlayer?
     private var silentPlayer: AVAudioPlayer?
+    private var vibrationTimer: Timer?
+    @Published var isAlarmPlaying = false
+    
+    /// Catalog of alarm sounds with URLs for streaming preview
+    static let alarmSounds: [(id: String, name: String, url: String, description: String)] = [
+        ("default", "Classic Alarm", "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg", "Traditional alarm clock sound"),
+        ("beep", "Digital Beep", "https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg", "Sharp digital beeping"),
+        ("bugle", "Military Bugle", "https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg", "Wake up soldier!"),
+        ("rooster", "Rooster", "https://actions.google.com/sounds/v1/animals/rooster_crow.ogg", "Natural rooster crow"),
+        ("spaceship", "Spaceship Alarm", "https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg", "Futuristic spaceship alert"),
+        ("meditation", "Meditation Bell", "https://actions.google.com/sounds/v1/alarms/meditation_bell.ogg", "Gentle bell sound"),
+        ("chime", "Wind Chimes", "https://actions.google.com/sounds/v1/alarms/chime_bell.ogg", "Peaceful chimes"),
+        ("trumpet", "Trumpet Fanfare", "https://actions.google.com/sounds/v1/alarms/trumpet_fanfare.ogg", "Royal wake up call"),
+        ("birdsong", "Birds Chirping", "https://actions.google.com/sounds/v1/animals/birds_chirping.ogg", "Morning birds singing"),
+        ("siren", "Emergency Siren", "https://actions.google.com/sounds/v1/alarms/siren.ogg", "Loud emergency alert"),
+        ("gong", "Temple Gong", "https://actions.google.com/sounds/v1/alarms/gong.ogg", "Deep resonant gong")
+    ]
     
     private init() {
-        // Optionals are nil-initialized, so we can call methods now
         setupAudioSession()
     }
     
@@ -23,39 +41,105 @@ class SoundManager: ObservableObject {
         }
     }
     
-    func playSoundPreview(named: String) {
-        // Stop current playing sound if any
-        audioPlayer?.stop()
+    // MARK: - Sound Preview
+    
+    func playSoundPreview(named soundId: String) {
+        stopPreview()
         
-        // Mock sound playback - In a real app, this would load a file
-        // For now, we simulate with a 2-second timer or system sound if available
-        print("Playing 2-second preview for: \(named)")
+        guard let sound = SoundManager.alarmSounds.first(where: { $0.id == soundId }),
+              let url = URL(string: sound.url) else {
+            // Fallback to system sound
+            AudioServicesPlaySystemSound(1057)
+            return
+        }
         
-        // Example system sound (tink)
-        AudioServicesPlaySystemSound(1057)
+        let playerItem = AVPlayerItem(url: url)
+        streamPlayer = AVPlayer(playerItem: playerItem)
+        streamPlayer?.play()
         
-        // To simulate a 2-second duration, we could play a silent loop or just log
+        // Stop after 3 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.stopPreview()
+        }
     }
     
-    func startSilentMode() {
-        print("Starting silent white noise mode...")
-        // In a real app, you would play a very quiet or silent .wav file in a loop
-        // audioPlayer = ... (play silent.wav in loop)
+    func stopPreview() {
+        streamPlayer?.pause()
+        streamPlayer = nil
     }
     
-    func stopSilentMode() {
-        print("Stopping silent white noise mode.")
-        audioPlayer?.stop()
-    }
+    // MARK: - Alarm Playback
     
-    func playAlarm(named: String) {
-        print("TRIGGERING ALARM: \(named)")
-        // Play alarm sound at high volume
-        // audioPlayer = ... (play alarm.wav)
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    func playAlarm(named soundId: String) {
+        stopPreview()
+        isAlarmPlaying = true
+        
+        // Set audio session to high priority
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Audio session error: \(error)")
+        }
+        
+        // Try streaming the alarm sound
+        if let sound = SoundManager.alarmSounds.first(where: { $0.id == soundId }),
+           let url = URL(string: sound.url) {
+            let playerItem = AVPlayerItem(url: url)
+            streamPlayer = AVPlayer(playerItem: playerItem)
+            streamPlayer?.play()
+            
+            // Loop the alarm sound
+            NotificationCenter.default.addObserver(
+                forName: .AVPlayerItemDidPlayToEndTime,
+                object: playerItem,
+                queue: .main
+            ) { [weak self] _ in
+                self?.streamPlayer?.seek(to: .zero)
+                self?.streamPlayer?.play()
+            }
+        } else {
+            // Fallback: system sound
+            AudioServicesPlaySystemSound(1005)
+        }
+        
+        // Start vibration loop
+        startVibrationLoop()
     }
     
     func stopAlarm() {
+        isAlarmPlaying = false
+        streamPlayer?.pause()
+        streamPlayer = nil
+        audioPlayer?.stop()
+        audioPlayer = nil
+        stopVibrationLoop()
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
+    }
+    
+    // MARK: - Vibration
+    
+    private func startVibrationLoop() {
+        vibrationTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
+        // First vibration immediately
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    
+    private func stopVibrationLoop() {
+        vibrationTimer?.invalidate()
+        vibrationTimer = nil
+    }
+    
+    // MARK: - Silent Mode (for keeping app alive in background)
+    
+    func startSilentMode() {
+        print("Starting silent mode for alarm monitoring...")
+    }
+    
+    func stopSilentMode() {
+        print("Stopping silent mode.")
         audioPlayer?.stop()
     }
 }

@@ -18,14 +18,14 @@ class SocialManager: ObservableObject {
     // For this implementation, we will perform operations assuming we have access to context in the View.
     
     func searchUsers(query: String) {
-        guard !query.isEmpty else {
-            searchResults = []
-            return
-        }
-        
-        searchResults = mockUsers.filter { user in
-            user.username.localizedCaseInsensitiveContains(query) ||
-            user.fullName.localizedCaseInsensitiveContains(query)
+        if query.isEmpty {
+            // Show all users as suggestions before typing
+            searchResults = mockUsers
+        } else {
+            searchResults = mockUsers.filter { user in
+                user.username.localizedCaseInsensitiveContains(query) ||
+                user.fullName.localizedCaseInsensitiveContains(query)
+            }
         }
     }
     

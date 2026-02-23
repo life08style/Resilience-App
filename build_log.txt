@@ -1,0 +1,814 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme Resilience -destination generic/platform=iOS clean build
+
+2026-02-19 21:16:39.908 xcodebuild[18457:851281] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'Resilience' in project 'Resilience' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 931e19cc8df744a0f097c72425f8d8bf
+Build description path: /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/XCBuildData/931e19cc8df744a0f097c72425f8d8bf.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk /Users/maxstober/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.2-23C53-3794476bd08197c3e2abd9bb477ef7f7.sdkstatcache
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -o /Users/maxstober/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.2-23C53-3794476bd08197c3e2abd9bb477ef7f7.sdkstatcache
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience-eb3060eab4e8ad39de2bba565f24d482-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience-eb3060eab4e8ad39de2bba565f24d482-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos
+    cd /Users/maxstober/Documents/Resilience-App/Resilience.xcodeproj
+    builtin-create-build-directory /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/empty-Resilience.plist (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/empty-Resilience.plist
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyMetadataFileList (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyStaticMetadataFileList (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-project-headers.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-project-headers.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-own-target-headers.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-target-headers.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-generated-files.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-generated-files.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-non-framework-target-headers.hmap (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibPath-normal-arm64.txt (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibInstallName-normal-arm64.txt (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.LinkFileList (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.LinkFileList
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_const_extract_protocols.json (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftConstValuesFileList (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-OutputFileMap.json (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/Entitlements.plist (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    write-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/Entitlements.plist
+
+MkDir /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /bin/mkdir -p /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app
+
+ProcessProductPackaging /Users/maxstober/Library/Developer/Xcode/UserData/Provisioning\ Profiles/612cbffe-e1d6-497b-a038-e9ced0eb848e.mobileprovision /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/embedded.mobileprovision (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-productPackagingUtility /Users/maxstober/Library/Developer/Xcode/UserData/Provisioning\ Profiles/612cbffe-e1d6-497b-a038-e9ced0eb848e.mobileprovision -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/embedded.mobileprovision
+
+ProcessProductPackaging "" /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "8K523XU67R.com.maxstober.Resilience";
+    "com.apple.developer.team-identifier" = 8K523XU67R;
+    "get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent
+
+ProcessProductPackagingDER /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent.der (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /usr/bin/derq query -f xml -i /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent.der --raw
+
+Ld /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/__preview.dylib normal (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.6 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -O0 -L/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -install_name @rpath/Resilience.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_dependency_info.dat -Xlinker -no_adhoc_codesign -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/__preview.dylib
+
+MkDir /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/thinned (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /bin/mkdir -p /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/thinned
+
+MkDir /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/unthinned (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /bin/mkdir -p /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/unthinned
+
+GenerateAssetSymbols /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets --compile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_dependencies --output-partial-info-plist /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 17.6 --platform iphoneos --bundle-identifier com.maxstober.Resilience --generate-swift-asset-symbols /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.document.warnings */
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./SleepCategory.imageset/(null)[2d][sleep.png]: warning: The image set "SleepCategory" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AnalyticsCategory.imageset/(null)[2d][AnalyticsCategory.png]: warning: The image set "AnalyticsCategory" has 2 unassigned children.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AppIcon.appiconset/(null)[2d][AppIcon.png]: warning: The app icon set "AppIcon" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./SleepCategory.imageset/(null)[2d][sleep.png]: warning: The image set "SleepCategory" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AnalyticsCategory.imageset/(null)[2d][AnalyticsCategory.png]: warning: The image set "AnalyticsCategory" has 2 unassigned children.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AppIcon.appiconset/(null)[2d][AppIcon.png]: warning: The app icon set "AppIcon" has an unassigned child.
+/* com.apple.actool.compilation-results */
+/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CpResource /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/build_errors.txt /Users/maxstober/Documents/Resilience-App/Resilience/build_errors.txt (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/maxstober/Documents/Resilience-App/Resilience/build_errors.txt /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app
+
+CompileAssetCatalogVariant thinned /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets --compile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 17.6 --platform iphoneos
+/* com.apple.actool.document.warnings */
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AppIcon.appiconset/(null)[2d][AppIcon.png]: warning: The app icon set "AppIcon" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AnalyticsCategory.imageset/(null)[2d][AnalyticsCategory.png]: warning: The image set "AnalyticsCategory" has 2 unassigned children.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./SleepCategory.imageset/(null)[2d][sleep.png]: warning: The image set "SleepCategory" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./SleepCategory.imageset/(null)[2d][sleep.png]: warning: The image set "SleepCategory" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AppIcon.appiconset/(null)[2d][AppIcon.png]: warning: The app icon set "AppIcon" has an unassigned child.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./AnalyticsCategory.imageset/(null)[2d][AnalyticsCategory.png]: warning: The image set "AnalyticsCategory" has 2 unassigned children.
+/Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets:./SleepCategory.imageset/(null)[2d][sleep.png]: warning: The image set "SleepCategory" has an unassigned child.
+/* com.apple.actool.compilation-results */
+/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist_thinned
+/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver Resilience normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Resilience -Onone -enforce-exclusivity\=checked @/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -target arm64-apple-ios17.6 -g -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.2-23C53-3794476bd08197c3e2abd9bb477ef7f7.sdkstatcache -output-file-map /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_const_extract_protocols.json -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-generated-files.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-own-target-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-target-headers.hmap -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-project-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/include -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources-normal/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-Swift.h -import-objc-header /Users/maxstober/Documents/Resilience-App/Resilience/Resilience-Bridging-Header.h -working-directory /Users/maxstober/Documents/Resilience-App -experimental-emit-module-separately -disable-cmo
+
+SwiftGeneratePch normal arm64 Compiling\ bridging\ header (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling bridging header (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 Compiling\ CartView.swift,\ ChatDetailView.swift,\ ContactsManager.swift,\ ContentView.swift,\ CreatePostView.swift,\ DashboardView.swift,\ DaySchedule.swift,\ DesignSystem.swift,\ DietAnalyticsDetailView.swift,\ DietView.swift,\ EditSleepScheduleView.swift /Users/maxstober/Documents/Resilience-App/Resilience/CartView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ChatDetailView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ContactsManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/ContentView.swift /Users/maxstober/Documents/Resilience-App/Resilience/CreatePostView.swift /Users/maxstober/Documents/Resilience-App/Resilience/DashboardView.swift /Users/maxstober/Documents/Resilience-App/Resilience/DaySchedule.swift /Users/maxstober/Documents/Resilience-App/Resilience/DesignSystem.swift /Users/maxstober/Documents/Resilience-App/Resilience/DietAnalyticsDetailView.swift /Users/maxstober/Documents/Resilience-App/Resilience/DietView.swift /Users/maxstober/Documents/Resilience-App/Resilience/EditSleepScheduleView.swift (in target 'Resilience' from project 'Resilience')
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/CartView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ChatDetailView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ContactsManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ContentView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/CreatePostView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/DashboardView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/DaySchedule.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/DesignSystem.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/DietAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/DietView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/EditSleepScheduleView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Resilience (in target 'Resilience' from project 'Resilience')
+
+EmitSwiftModule normal arm64 (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ PostCard.swift,\ ProgressTrackingView.swift,\ ProjectsView.swift,\ RecipeDatabase.swift,\ RecipeDetailsView.swift,\ ResilienceApp.swift,\ ResilienceAppBar.swift,\ RunningView.swift,\ SavedHubView.swift,\ ScheduleTaskSheet.swift,\ ScreenTimeAnalyticsDetailView.swift /Users/maxstober/Documents/Resilience-App/Resilience/PostCard.swift /Users/maxstober/Documents/Resilience-App/Resilience/ProgressTrackingView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ProjectsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/RecipeDatabase.swift /Users/maxstober/Documents/Resilience-App/Resilience/RecipeDetailsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ResilienceApp.swift /Users/maxstober/Documents/Resilience-App/Resilience/ResilienceAppBar.swift /Users/maxstober/Documents/Resilience-App/Resilience/RunningView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SavedHubView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ScheduleTaskSheet.swift /Users/maxstober/Documents/Resilience-App/Resilience/ScreenTimeAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/PostCard.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ProgressTrackingView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ProjectsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/RecipeDatabase.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/RecipeDetailsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ResilienceApp.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ResilienceAppBar.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/RunningView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SavedHubView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ScheduleTaskSheet.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ScreenTimeAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ SettingsHubView.swift,\ SkillsView.swift,\ SleepAnalyticsDetailView.swift,\ SleepScheduleView.swift,\ SleepView.swift,\ SocialFeed.swift,\ SocialManager.swift,\ SocialModels.swift,\ SocialProfileHeader.swift,\ SocialView.swift,\ SoundHapticSettingsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SettingsHubView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SkillsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SleepAnalyticsDetailView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SleepScheduleView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SleepView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SocialFeed.swift /Users/maxstober/Documents/Resilience-App/Resilience/SocialManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/SocialModels.swift /Users/maxstober/Documents/Resilience-App/Resilience/SocialProfileHeader.swift /Users/maxstober/Documents/Resilience-App/Resilience/SocialView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SoundHapticSettingsView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SettingsHubView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SkillsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SleepAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SleepScheduleView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SleepView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SocialFeed.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SocialManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SocialModels.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SocialProfileHeader.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SocialView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SoundHapticSettingsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ MindfulnessView.swift,\ Models.swift,\ MonthGrid.swift,\ MuscleWorkoutsView.swift,\ MusicLibraryView.swift,\ MusicManager.swift,\ NewChatView.swift,\ NotificationManager.swift,\ OnboardingView.swift,\ PantryView.swift,\ PlyometricsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MindfulnessView.swift /Users/maxstober/Documents/Resilience-App/Resilience/Models.swift /Users/maxstober/Documents/Resilience-App/Resilience/MonthGrid.swift /Users/maxstober/Documents/Resilience-App/Resilience/MuscleWorkoutsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MusicLibraryView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MusicManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/NewChatView.swift /Users/maxstober/Documents/Resilience-App/Resilience/NotificationManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/OnboardingView.swift /Users/maxstober/Documents/Resilience-App/Resilience/PantryView.swift /Users/maxstober/Documents/Resilience-App/Resilience/PlyometricsView.swift (in target 'Resilience' from project 'Resilience')
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MindfulnessView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/Models.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MonthGrid.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MuscleWorkoutsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MusicLibraryView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MusicManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/NewChatView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+/Users/maxstober/Documents/Resilience-App/Resilience/NewChatView.swift:127:17: warning: 'init(isActive:destination:label:)' was deprecated in iOS 16.0: use NavigationLink(value:label:), or navigationDestination(isPresented:destination:), inside a NavigationStack or NavigationSplitView
+                NavigationLink(isActive: $navigateToChat) {
+                ^
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/NotificationManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/OnboardingView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/PantryView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/PlyometricsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ HapticManager.swift,\ HealthKitManager.swift,\ HomeView.swift,\ HumanBodyView.swift,\ LaunchScreen.swift,\ LocationManager.swift,\ MainAccountSettingsView.swift,\ ManualMealPlannerView.swift,\ MealPlannerView.swift,\ MentalHealthView.swift,\ MessagesListView.swift /Users/maxstober/Documents/Resilience-App/Resilience/HapticManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/HealthKitManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/HomeView.swift /Users/maxstober/Documents/Resilience-App/Resilience/HumanBodyView.swift /Users/maxstober/Documents/Resilience-App/Resilience/LaunchScreen.swift /Users/maxstober/Documents/Resilience-App/Resilience/LocationManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/MainAccountSettingsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ManualMealPlannerView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MealPlannerView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MentalHealthView.swift /Users/maxstober/Documents/Resilience-App/Resilience/MessagesListView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/HapticManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/HealthKitManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/HomeView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/HumanBodyView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/LaunchScreen.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/LocationManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MainAccountSettingsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ManualMealPlannerView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MealPlannerView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MentalHealthView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/MessagesListView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ ExerciseAnalyticsDetailView.swift,\ ExerciseView.swift,\ FeatureItem.swift,\ FocusModeView.swift,\ FoodCatalog.swift,\ FoodLogSheet.swift,\ GeneralSettingsView.swift,\ GoalModels.swift,\ GoalRoadmapViews.swift,\ GroupChallenges.swift,\ HabitTrackerView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ExerciseAnalyticsDetailView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ExerciseView.swift /Users/maxstober/Documents/Resilience-App/Resilience/FeatureItem.swift /Users/maxstober/Documents/Resilience-App/Resilience/FocusModeView.swift /Users/maxstober/Documents/Resilience-App/Resilience/FoodCatalog.swift /Users/maxstober/Documents/Resilience-App/Resilience/FoodLogSheet.swift /Users/maxstober/Documents/Resilience-App/Resilience/GeneralSettingsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/GoalModels.swift /Users/maxstober/Documents/Resilience-App/Resilience/GoalRoadmapViews.swift /Users/maxstober/Documents/Resilience-App/Resilience/GroupChallenges.swift /Users/maxstober/Documents/Resilience-App/Resilience/HabitTrackerView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ExerciseAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ExerciseView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/FeatureItem.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/FocusModeView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/FoodCatalog.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/FoodLogSheet.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/GeneralSettingsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/GoalModels.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/GoalRoadmapViews.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/GroupChallenges.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/HabitTrackerView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ UserProfileView.swift,\ UserSettings.swift,\ WhiteNoiseEngine.swift,\ WhiteNoisePlayer.swift,\ WorkoutAchievementCard.swift,\ WorkoutBuilderView.swift,\ WorkoutDatabase.swift,\ WorkoutPlansPage.swift,\ WorkoutSessionView.swift,\ GeneratedAssetSymbols.swift /Users/maxstober/Documents/Resilience-App/Resilience/UserProfileView.swift /Users/maxstober/Documents/Resilience-App/Resilience/UserSettings.swift /Users/maxstober/Documents/Resilience-App/Resilience/WhiteNoiseEngine.swift /Users/maxstober/Documents/Resilience-App/Resilience/WhiteNoisePlayer.swift /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutAchievementCard.swift /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutBuilderView.swift /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutDatabase.swift /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutPlansPage.swift /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutSessionView.swift /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/UserProfileView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/UserSettings.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WhiteNoiseEngine.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WhiteNoisePlayer.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutAchievementCard.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutBuilderView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutDatabase.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutPlansPage.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/WorkoutSessionView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ AnalyticsHubView.swift,\ AnalyticsShared.swift,\ AppLockView.swift,\ AuthenticationView.swift,\ AuthService.swift,\ BluCustomizationView.swift,\ BluMascotView.swift,\ BluStore.swift,\ BodyMeasurementsView.swift,\ BuildMomentumView.swift,\ CalendarManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/AnalyticsHubView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AnalyticsShared.swift /Users/maxstober/Documents/Resilience-App/Resilience/AppLockView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AuthenticationView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AuthService.swift /Users/maxstober/Documents/Resilience-App/Resilience/BluCustomizationView.swift /Users/maxstober/Documents/Resilience-App/Resilience/BluMascotView.swift /Users/maxstober/Documents/Resilience-App/Resilience/BluStore.swift /Users/maxstober/Documents/Resilience-App/Resilience/BodyMeasurementsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/BuildMomentumView.swift /Users/maxstober/Documents/Resilience-App/Resilience/CalendarManager.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AnalyticsHubView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AnalyticsShared.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AppLockView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AuthenticationView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AuthService.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/BluCustomizationView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/BluMascotView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/BluStore.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/BodyMeasurementsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/BuildMomentumView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/CalendarManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 Compiling\ SoundManager.swift,\ StartDayView.swift,\ StreakCard.swift,\ StreakLeaderboard.swift,\ StreaksView.swift,\ StrengthTrainingView.swift,\ StretchWorkoutsView.swift,\ SubscriptionView.swift,\ SwipeNavigationModifier.swift,\ TimeManagementView.swift,\ TodoListView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SoundManager.swift /Users/maxstober/Documents/Resilience-App/Resilience/StartDayView.swift /Users/maxstober/Documents/Resilience-App/Resilience/StreakCard.swift /Users/maxstober/Documents/Resilience-App/Resilience/StreakLeaderboard.swift /Users/maxstober/Documents/Resilience-App/Resilience/StreaksView.swift /Users/maxstober/Documents/Resilience-App/Resilience/StrengthTrainingView.swift /Users/maxstober/Documents/Resilience-App/Resilience/StretchWorkoutsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SubscriptionView.swift /Users/maxstober/Documents/Resilience-App/Resilience/SwipeNavigationModifier.swift /Users/maxstober/Documents/Resilience-App/Resilience/TimeManagementView.swift /Users/maxstober/Documents/Resilience-App/Resilience/TodoListView.swift (in target 'Resilience' from project 'Resilience')
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SoundManager.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StartDayView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StreakCard.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StreakLeaderboard.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StreaksView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StrengthTrainingView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/StretchWorkoutsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SubscriptionView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/SwipeNavigationModifier.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/TimeManagementView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/TodoListView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Resilience (in target 'Resilience' from project 'Resilience')
+
+SwiftDriver\ Compilation\ Requirements Resilience normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Resilience -Onone -enforce-exclusivity\=checked @/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -target arm64-apple-ios17.6 -g -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.2-23C53-3794476bd08197c3e2abd9bb477ef7f7.sdkstatcache -output-file-map /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_const_extract_protocols.json -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-generated-files.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-own-target-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-target-headers.hmap -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-project-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/include -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources-normal/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-Swift.h -import-objc-header /Users/maxstober/Documents/Resilience-App/Resilience/Resilience-Bridging-Header.h -working-directory /Users/maxstober/Documents/Resilience-App -experimental-emit-module-separately -disable-cmo
+
+LinkAssetCatalog /Users/maxstober/Documents/Resilience-App/Resilience/Assets.xcassets (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-linkAssetCatalog --thinned /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/thinned --thinned-dependencies /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist_unthinned --output /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app --plist-output /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Assets.car (in target 'Resilience' from project 'Resilience')
+
+SwiftMergeGeneratedHeaders /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/Resilience-Swift.h /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-Swift.h (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-swiftHeaderTool -arch arm64 /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-Swift.h -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/Resilience-Swift.h
+
+Copy /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.swiftmodule /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.swiftdoc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftdoc (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftdoc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.swiftdoc
+
+Copy /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.abi.json /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.abi.json (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.abi.json /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftsourceinfo (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftsourceinfo /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+ProcessInfoPlistFile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Info.plist /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/empty-Resilience.plist (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-infoPlistUtility /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/empty-Resilience.plist -producttype com.apple.product-type.application -genpkginfo /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Info.plist
+
+SwiftCompile normal arm64 Compiling\ AccountView.swift,\ ActiveRunView.swift,\ ActiveStretchWorkoutView.swift,\ AddBodyMeasurementView.swift,\ AddChallengeView.swift,\ AddEventView.swift,\ AICoachView.swift,\ AIService.swift,\ AIWorkoutPlannerView.swift,\ AlarmActiveView.swift,\ AlarmSoundsView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AccountView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ActiveRunView.swift /Users/maxstober/Documents/Resilience-App/Resilience/ActiveStretchWorkoutView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AddBodyMeasurementView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AddChallengeView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AddEventView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AICoachView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AIService.swift /Users/maxstober/Documents/Resilience-App/Resilience/AIWorkoutPlannerView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AlarmActiveView.swift /Users/maxstober/Documents/Resilience-App/Resilience/AlarmSoundsView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AccountView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ActiveRunView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/ActiveStretchWorkoutView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AddBodyMeasurementView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AddChallengeView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AddEventView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AICoachView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AIService.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AIWorkoutPlannerView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AlarmActiveView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftCompile normal arm64 /Users/maxstober/Documents/Resilience-App/Resilience/AlarmSoundsView.swift (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling CartView.swift, ChatDetailView.swift, ContactsManager.swift, ContentView.swift, CreatePostView.swift, DashboardView.swift, DaySchedule.swift, DesignSystem.swift, DietAnalyticsDetailView.swift, DietView.swift, EditSleepScheduleView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling UserProfileView.swift, UserSettings.swift, WhiteNoiseEngine.swift, WhiteNoisePlayer.swift, WorkoutAchievementCard.swift, WorkoutBuilderView.swift, WorkoutDatabase.swift, WorkoutPlansPage.swift, WorkoutSessionView.swift, GeneratedAssetSymbols.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling HapticManager.swift, HealthKitManager.swift, HomeView.swift, HumanBodyView.swift, LaunchScreen.swift, LocationManager.swift, MainAccountSettingsView.swift, ManualMealPlannerView.swift, MealPlannerView.swift, MentalHealthView.swift, MessagesListView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AnalyticsHubView.swift, AnalyticsShared.swift, AppLockView.swift, AuthenticationView.swift, AuthService.swift, BluCustomizationView.swift, BluMascotView.swift, BluStore.swift, BodyMeasurementsView.swift, BuildMomentumView.swift, CalendarManager.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ExerciseAnalyticsDetailView.swift, ExerciseView.swift, FeatureItem.swift, FocusModeView.swift, FoodCatalog.swift, FoodLogSheet.swift, GeneralSettingsView.swift, GoalModels.swift, GoalRoadmapViews.swift, GroupChallenges.swift, HabitTrackerView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SettingsHubView.swift, SkillsView.swift, SleepAnalyticsDetailView.swift, SleepScheduleView.swift, SleepView.swift, SocialFeed.swift, SocialManager.swift, SocialModels.swift, SocialProfileHeader.swift, SocialView.swift, SoundHapticSettingsView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling PostCard.swift, ProgressTrackingView.swift, ProjectsView.swift, RecipeDatabase.swift, RecipeDetailsView.swift, ResilienceApp.swift, ResilienceAppBar.swift, RunningView.swift, SavedHubView.swift, ScheduleTaskSheet.swift, ScreenTimeAnalyticsDetailView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AccountView.swift, ActiveRunView.swift, ActiveStretchWorkoutView.swift, AddBodyMeasurementView.swift, AddChallengeView.swift, AddEventView.swift, AICoachView.swift, AIService.swift, AIWorkoutPlannerView.swift, AlarmActiveView.swift, AlarmSoundsView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MindfulnessView.swift, Models.swift, MonthGrid.swift, MuscleWorkoutsView.swift, MusicLibraryView.swift, MusicManager.swift, NewChatView.swift, NotificationManager.swift, OnboardingView.swift, PantryView.swift, PlyometricsView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SoundManager.swift, StartDayView.swift, StreakCard.swift, StreakLeaderboard.swift, StreaksView.swift, StrengthTrainingView.swift, StretchWorkoutsView.swift, SubscriptionView.swift, SwipeNavigationModifier.swift, TimeManagementView.swift, TodoListView.swift (in target 'Resilience' from project 'Resilience')
+
+SwiftDriver\ Compilation Resilience normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Resilience -Onone -enforce-exclusivity\=checked @/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -target arm64-apple-ios17.6 -g -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.2-23C53-3794476bd08197c3e2abd9bb477ef7f7.sdkstatcache -output-file-map /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/maxstober/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_const_extract_protocols.json -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-generated-files.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-own-target-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-all-target-headers.hmap -Xcc -iquote -Xcc /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-project-headers.hmap -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/include -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources-normal/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources/arm64 -Xcc -I/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-Swift.h -import-objc-header /Users/maxstober/Documents/Resilience-App/Resilience/Resilience-Bridging-Header.h -working-directory /Users/maxstober/Documents/Resilience-App -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib normal (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.6 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -O0 -L/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -L/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -F/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -filelist /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.LinkFileList -install_name @rpath/Resilience.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.swiftmodule @/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-ExecutorLinkFileList-normal-arm64.txt (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    construct-stub-executor-link-file-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'Resilience' from project 'Resilience')
+
+Ld /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience normal (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.6 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -O0 -L/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -F/Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience-ExecutorLinkFileList-normal-arm64.txt /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience
+
+CopySwiftLibs /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-swiftStdLibTool --copy --verbose --sign 6578EF5BD1A416407CA1C34268A24B2E27CB5BF4 --scan-executable /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib --scan-folder /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Frameworks --scan-folder /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/PlugIns --scan-folder /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/SystemExtensions --scan-folder /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Extensions --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+
+ExtractAppIntentsMetadata (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name Resilience --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk --xcode-version 17C52 --platform-family iOS --deployment-target 17.6 --bundle-identifier com.maxstober.Resilience --output /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app --target-triple arm64-apple-ios17.6 --binary-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience --dependency-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience_dependency_info.dat --stringsdata-file /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftFileList --metadata-file-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyMetadataFileList --static-metadata-file-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyStaticMetadataFileList --swift-const-vals-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Objects-normal/arm64/Resilience.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-02-19 21:17:07.733 appintentsmetadataprocessor[18523:852100] Starting appintentsmetadataprocessor export
+2026-02-19 21:17:07.734 appintentsmetadataprocessor[18523:852100] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Info.plist --temp-dir-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/ssu --bundle-id com.maxstober.Resilience --product-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app --extracted-metadata-path /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Metadata.appintents --metadata-file-list /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.DependencyMetadataFileList --archive-ssu-assets
+2026-02-19 21:17:07.749 appintentsnltrainingprocessor[18524:852103] Parsing options for appintentsnltrainingprocessor
+2026-02-19 21:17:07.749 appintentsnltrainingprocessor[18524:852103] No AppShortcuts found - Skipping.
+
+CodeSign /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+    Signing Identity:     "Apple Development: mstober8@icloud.com (TPZF23CNHR)"
+    Provisioning Profile: "iOS Team Provisioning Profile: com.maxstober.Resilience"
+                          (612cbffe-e1d6-497b-a038-e9ced0eb848e)
+    
+    /usr/bin/codesign --force --sign 6578EF5BD1A416407CA1C34268A24B2E27CB5BF4 --timestamp\=none --generate-entitlement-der /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/Resilience.debug.dylib
+
+CodeSign /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/__preview.dylib (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+    Signing Identity:     "Apple Development: mstober8@icloud.com (TPZF23CNHR)"
+    Provisioning Profile: "iOS Team Provisioning Profile: com.maxstober.Resilience"
+                          (612cbffe-e1d6-497b-a038-e9ced0eb848e)
+    
+    /usr/bin/codesign --force --sign 6578EF5BD1A416407CA1C34268A24B2E27CB5BF4 --timestamp\=none --generate-entitlement-der /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app/__preview.dylib
+
+CodeSign /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    
+    Signing Identity:     "Apple Development: mstober8@icloud.com (TPZF23CNHR)"
+    Provisioning Profile: "iOS Team Provisioning Profile: com.maxstober.Resilience"
+                          (612cbffe-e1d6-497b-a038-e9ced0eb848e)
+    
+    /usr/bin/codesign --force --sign 6578EF5BD1A416407CA1C34268A24B2E27CB5BF4 --entitlements /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Intermediates.noindex/Resilience.build/Debug-iphoneos/Resilience.build/Resilience.app.xcent --timestamp\=none --generate-entitlement-der /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app
+
+RegisterExecutionPolicyException /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-RegisterExecutionPolicyException /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app
+
+Validate /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    builtin-validationUtility /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app (in target 'Resilience' from project 'Resilience')
+    cd /Users/maxstober/Documents/Resilience-App
+    /usr/bin/touch -c /Users/maxstober/Library/Developer/Xcode/DerivedData/Resilience-hjgizvntczsmvkbwclbnlkqjdpvu/Build/Products/Debug-iphoneos/Resilience.app
+
+** BUILD SUCCEEDED **
+

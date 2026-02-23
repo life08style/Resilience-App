@@ -22,7 +22,13 @@ struct FoodLogSheet: View {
         if searchText.isEmpty {
             return []
         }
-        return FoodCatalog.items.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        return FuzzySearch.search(query: searchText, in: FoodCatalog.items, by: \CatalogFoodItem.name)
+    }
+    
+    /// Suggested foods grouped by category for when search is empty
+    private var suggestedCategories: [(String, [CatalogFoodItem])] {
+        let groups = Dictionary(grouping: FoodCatalog.items, by: \.category)
+        return groups.sorted { $0.key < $1.key }.map { ($0.key, Array($0.value.prefix(4))) }
     }
     
     var body: some View {
@@ -68,6 +74,14 @@ struct FoodLogSheet: View {
                     .foregroundColor(.gray)
                 TextField("Search 10,000+ foods...", text: $searchText)
                     .foregroundColor(.white)
+                    .autocorrectionDisabled()
+                
+                if !searchText.isEmpty {
+                    Button(action: { searchText = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                    }
+                }
             }
             .padding()
             .background(Color(UIColor.systemGray6).opacity(0.2))
@@ -87,40 +101,80 @@ struct FoodLogSheet: View {
                 .cornerRadius(12)
             }
             
-            // Results List
+            // Results or Suggestions
             ScrollView {
                 VStack(spacing: 12) {
-                    ForEach(filteredFoods) { food in
-                        Button(action: { selectedFood = food }) {
-                            HStack {
-                                    Image(food.imageName)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.1), lineWidth: 1))
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(food.name)
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                        Text(food.category)
-                                            .font(.caption)
-                                            .foregroundColor(.gray)
-                                    }
-                                Spacer()
-                                Text(food.defaultUnit)
-                                    .font(.caption)
+                    if searchText.isEmpty {
+                        // Show suggested categories when not searching
+                        ForEach(suggestedCategories, id: \.0) { category, foods in
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(category)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
                                     .foregroundColor(.green)
+                                    .padding(.top, 4)
+                                
+                                ForEach(foods) { food in
+                                    Button(action: { selectedFood = food }) {
+                                        foodRow(food: food)
+                                    }
+                                }
                             }
-                            .padding()
-                            .background(Color.white.opacity(0.05))
-                            .cornerRadius(12)
+                        }
+                    } else {
+                        // Show fuzzy search results
+                        if filteredFoods.isEmpty {
+                            VStack(spacing: 12) {
+                                Image(systemName: "magnifyingglass")
+                                    .font(.title)
+                                    .foregroundColor(.gray)
+                                Text("No foods found for \"\(searchText)\"")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                Text("Try a different spelling or manual entry")
+                                    .font(.caption)
+                                    .foregroundColor(.gray.opacity(0.7))
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 30)
+                        } else {
+                            ForEach(filteredFoods) { food in
+                                Button(action: { selectedFood = food }) {
+                                    foodRow(food: food)
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+    }
+    
+    private func foodRow(food: CatalogFoodItem) -> some View {
+        HStack {
+            Image(food.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 40, height: 40)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.1), lineWidth: 1))
+            
+            VStack(alignment: .leading) {
+                Text(food.name)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Text(food.category)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+            Text(food.defaultUnit)
+                .font(.caption)
+                .foregroundColor(.green)
+        }
+        .padding()
+        .background(Color.white.opacity(0.05))
+        .cornerRadius(12)
     }
     
     private func loggingForm(for food: CatalogFoodItem) -> some View {

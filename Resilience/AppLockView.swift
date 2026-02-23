@@ -16,7 +16,6 @@ struct AppLockView: View {
     ]
     
     var body: some View {
-        NavigationView {
             List {
                 Section(header: Text("Select Apps to Lock during Sleep Mode")) {
                     ForEach(availableApps, id: \.0) { app in
@@ -48,7 +47,6 @@ struct AppLockView: View {
                     }
                 }
             }
-        }
     }
     
     func toggleLock(for appName: String) {

@@ -34,11 +34,19 @@ struct HabitTrackerView: View {
                     // Habits List
                     if habits.isEmpty {
                         VStack(spacing: 16) {
-                            ProgressView().tint(.blue)
-                            Text("Initializing Habits...")
+                            Image(systemName: "checklist")
+                                .font(.system(size: 48))
+                                .foregroundColor(.gray.opacity(0.5))
+                            Text("No habits yet")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                            Text("Tap \"Create Custom Habit\" below to get started.")
+                                .font(.subheadline)
                                 .foregroundColor(.gray)
+                                .multilineTextAlignment(.center)
                         }
                         .padding(.vertical, 40)
+                        .padding(.horizontal)
                     } else {
                         VStack(spacing: 16) {
                             ForEach(habits) { habit in

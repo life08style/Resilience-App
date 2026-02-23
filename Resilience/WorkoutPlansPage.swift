@@ -5,7 +5,6 @@ struct WorkoutPlansPage: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
@@ -118,6 +117,5 @@ struct WorkoutPlansPage: View {
                 }
             }
             .navigationBarHidden(true)
-        }
     }
 }
